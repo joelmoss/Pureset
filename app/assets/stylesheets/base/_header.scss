@@ -1,20 +1,31 @@
 header {
+  @extend .container;
   @extend .clearfix;
-  border-bottom: 1px solid #eee;
   padding: 10px 0;
+
+  > div {
+    float: left;
+    width: 56px;
+  }
 
   #logo {
     float: left;
-    background: #fff image-url('logo.png') no-repeat;
     width: 168px;
-    height: 54px;
-    text-indent: -9999px;
+    height: 55px;
+    border-bottom: 1px solid #eee;
+
+    img {
+      position: relative;
+      left: -25px;
+    }
   }
 
   nav {
     float: left;
     text-align: right;
-    width: $section-width - 168px;
-    padding-top: 30px;
+    width: $section-width - 168px - 56px;
+    padding-top: 28px;
+    height: 55px;
+    border-bottom: 1px solid #eee;
   }
 }

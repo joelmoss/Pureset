@@ -25,11 +25,21 @@ body {
 // Containers
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
-main,
-section {
-	@extend .container;
-}
-
 main {
-	margin: 40px auto;
+	@extend .container;
+  @extend .clearfix;
+
+  aside {
+    float: left;
+    width: 50px;
+  }
+
+  #outer-content {
+    float: left;
+    width: 1030px;
+
+    section {
+      @extend .content;
+    }
+  }
 }
