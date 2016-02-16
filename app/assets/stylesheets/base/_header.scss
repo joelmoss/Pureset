@@ -1,0 +1,20 @@
+header {
+  @extend .clearfix;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+
+  #logo {
+    float: left;
+    background: #fff image-url('logo.png') no-repeat;
+    width: 168px;
+    height: 54px;
+    text-indent: -9999px;
+  }
+
+  nav {
+    float: left;
+    text-align: right;
+    width: $section-width - 168px;
+    padding-top: 30px;
+  }
+}

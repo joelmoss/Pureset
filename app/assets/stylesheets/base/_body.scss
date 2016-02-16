@@ -1,0 +1,44 @@
+// Base
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+html {
+	box-sizing: border-box;
+}
+
+// Default body styles
+body {
+	color: $color-secondary;
+	font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 14px;
+	font-weight: 300;
+	line-height: 1.6;
+}
+
+// Set box-sizing globally to handle padding and border widths
+*,
+*:after,
+*:before {
+	box-sizing: inherit;
+}
+
+
+// Containers
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+main,
+section {
+	@extend .container;
+
+	&#flash {
+		background-color: $color-info;
+		text-align: center;
+		max-width: none;
+		padding: 8px 0;
+		font-weight: 400;
+		color: $color-initial;
+	}
+}
+
+main {
+		margin: 40px auto;
+}
