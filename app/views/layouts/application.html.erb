@@ -16,9 +16,9 @@
         <div id="logo"><%= image_tag 'logo.png' %></div>
         <nav>
           <%- if user_signed_in? %>
-            <span><%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+            <span><%= link_to icon('sign-out', 'Sign out'), destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %></span>
           <%- else -%>
-            <span><%= link_to 'Sign in', new_user_session_path %></span>
+            <span><%= link_to icon('sign-in', 'Sign in'), new_user_session_path %></span>
           <%- end -%>
         </nav>
       </header>

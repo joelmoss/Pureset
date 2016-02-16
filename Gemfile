@@ -26,7 +26,6 @@ end
 group :development do
   gem 'web-console', '~> 3.0'
   gem 'spring'
-  gem 'quiet_assets'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
