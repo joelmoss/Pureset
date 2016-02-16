@@ -15,6 +15,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'redis', '~> 3.0'
 gem 'font-awesome-sass'
+gem 'devise', '4.0.0.rc1'
+gem 'simple_form'
 
 group :development, :test do
   gem 'byebug'
