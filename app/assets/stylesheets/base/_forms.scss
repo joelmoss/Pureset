@@ -17,7 +17,7 @@ select {
 	border-radius: 4px;
 	box-shadow: none;
 	height: 38px;
-	padding: 6px 10px; // The .6rem vertically centers text on FF, ignored by Webkit
+	padding: 6px 10px;
 	width: 100%;
 
 	&:focus {
@@ -57,10 +57,35 @@ fieldset {
 input[type='checkbox'],
 input[type='radio'] {
 	display: inline;
+	margin-right: 10px;
 }
 
-.label-inline {
-	font-weight: normal;
-	display: inline-block;
-	margin-left: 5px;
+.form-actions {
+	margin-top: 12px;
+	border-top: 1px solid #eee;
+	padding-top: 10px;
+}
+
+
+// Errors
+// ----------------------------------------------
+
+.field_with_errors {
+	input[type='email'],
+	input[type='number'],
+	input[type='password'],
+	input[type='search'],
+	input[type='tel'],
+	input[type='text'],
+	input[type='url'],
+	textarea,
+	select {
+		margin-bottom: 5px;
+	}
+
+	.error {
+		margin: 0 0 20px 3px;
+	  display: inline-block;
+	  color: $color-danger;
+	}
 }

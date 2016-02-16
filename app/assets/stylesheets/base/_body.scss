@@ -28,17 +28,8 @@ body {
 main,
 section {
 	@extend .container;
-
-	&#flash {
-		background-color: $color-info;
-		text-align: center;
-		max-width: none;
-		padding: 8px 0;
-		font-weight: 400;
-		color: $color-initial;
-	}
 }
 
 main {
-		margin: 40px auto;
+	margin: 40px auto;
 }
