@@ -5,7 +5,7 @@ header {
 
   > div {
     float: left;
-    width: 56px;
+    width: 30px;
   }
 
   #logo {
@@ -23,7 +23,7 @@ header {
   nav {
     float: left;
     text-align: right;
-    width: $section-width - 168px - 56px;
+    width: $section-width - 168px - 30px;
     padding-top: 28px;
     height: 55px;
     border-bottom: 1px solid #eee;
