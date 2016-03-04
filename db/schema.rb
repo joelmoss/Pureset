@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160216134712) do
+ActiveRecord::Schema.define(version: 20160304171811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,9 +32,17 @@ ActiveRecord::Schema.define(version: 20160216134712) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_accounts_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true, using: :btree
-    t.index ["username"], name: "index_accounts_on_username", unique: true, using: :btree
+  end
+
+  add_index "accounts", ["email"], name: "index_accounts_on_email", unique: true, using: :btree
+  add_index "accounts", ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true, using: :btree
+  add_index "accounts", ["username"], name: "index_accounts_on_username", unique: true, using: :btree
+
+  create_table "issues", force: :cascade do |t|
+    t.string   "summary"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end
