@@ -32,6 +32,28 @@ main {
   aside {
     float: left;
     width: 50px;
+    margin: 32px 0;
+
+    a {
+      padding: 4px 8px 4px 4px;
+      border-right: 1px solid #eee;
+      margin-left: 4px;
+      font-size: 16px;
+      display: inline-block;
+      width: 28px;
+      text-align: center;
+
+      &:hover {
+        border-right-color: $color-primary;
+        color: #000;
+      }
+    }
+
+    span {
+      display: block;
+      height: 1px;
+      margin: 12px 18px 20px 0;
+    }
   }
 
   #outer-content {
