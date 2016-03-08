@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get ':username', to: 'accounts#show'
 
-  root 'welcome#index'
+  root 'home#index'
 
   # Serve websocket cable requests in-process
   # mount ActionCable.server => '/cable'
