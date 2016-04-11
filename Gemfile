@@ -22,7 +22,7 @@ gem 'redcarpet'
 
 group :development, :test do
   gem 'byebug'
-  gem 'rspec-rails', '3.5.0.beta1'
+  gem 'rspec-rails', '3.5.0.beta3'
 end
 
 group :development do
