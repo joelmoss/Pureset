@@ -15,8 +15,10 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'redis', '~> 3.0'
 gem 'font-awesome-sass'
-gem 'devise', '4.0.0.rc1'
+gem 'devise', '4.0.0.rc2'
 gem 'simple_form'
+gem 'github-markup', require: 'github/markup'
+gem 'redcarpet'
 
 group :development, :test do
   gem 'byebug'
@@ -24,9 +26,13 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console', '~> 3.0'
   gem 'spring'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'guard-rails'
+  gem 'guard-livereload'
+  gem 'guard-bundler'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: [ :mingw, :mswin, :x64_mingw, :jruby ]

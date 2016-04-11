@@ -17,7 +17,9 @@
         <%= link_to image_tag('logo.png', width: 168), :root %>
       </div>
       <nav>
-        <%- unless user_signed_in? %>
+        <%- if user_signed_in? %>
+          <span><%= avatar_image(current_user) %> <%= current_user %></span>
+        <% else %>
           <span><%= link_to icon('sign-in', 'Sign in'), new_user_session_path %></span>
         <%- end -%>
       </nav>

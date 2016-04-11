@@ -1,2 +1,12 @@
-<h1>Your Home</h1>
+<h3>Your Issues</h3>
 
+<ul>
+  <% @issues.each do |issue| %>
+    <li>
+      <%= link_to issue do %>
+        <strong>[<i>#<%= issue.id %></i>] <%= issue %></strong>
+      <% end %>
+      <div><%= issue.description %></div>
+    </li>
+  <% end %>
+</ul>

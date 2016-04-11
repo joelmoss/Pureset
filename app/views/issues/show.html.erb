@@ -1,14 +1,10 @@
-<p id="notice"><%= notice %></p>
+<article>
+  <h4><strong>#<%= @issue.id %></strong> <%= @issue.summary %></h4>
 
-<p>
-  <strong>Summary:</strong>
-  <%= @issue.summary %>
-</p>
+  <%= GitHub::Markup.render('issue.markdown', @issue.description).html_safe %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @issue.description %>
-</p>
+  <div>
+    <%= link_to 'Edit', edit_issue_path(@issue) %>
+  </div>
 
-<%= link_to 'Edit', edit_issue_path(@issue) %> |
-<%= link_to 'Back', issues_path %>
+</article>
