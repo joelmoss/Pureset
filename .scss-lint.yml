@@ -1,0 +1,15 @@
+# Linter Options
+options:
+  # Don't merge default rules
+  merge-default-rules: true
+  # Set the formatter to 'html'
+  formatter: html
+  # Output file instead of logging results
+# File Options
+files:
+  include: 'app/assets/stylesheets/**/*.s+(a|c)ss'
+  ignore:
+    - 'app/vendor/**/*.*'
+
+# Default severity of all linters.
+severity: warning

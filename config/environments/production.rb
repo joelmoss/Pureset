@@ -11,7 +11,7 @@ Rails.application.configure do
   config.eager_load = true
 
   # Full error reports are disabled and caching is turned on.
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local = false
   config.action_controller.perform_caching = true
 
   # Disable serving static files from the `/public` folder by default since
@@ -29,7 +29,8 @@ Rails.application.configure do
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
 
-  # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
+  # `config.assets.precompile` and `config.assets.version` have moved to
+  # config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
@@ -50,7 +51,7 @@ Rails.application.configure do
   config.log_level = :debug
 
   # Prepend all log lines with the following tags.
-  config.log_tags = [ :request_id ]
+  config.log_tags = [:request_id]
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'

@@ -1,6 +1,8 @@
 # Pureset
 
-> Better issue management for software engineering, that is closer to your code.
+> Better issue management for developers|product managers|QA engineers, where the experience is
+> tailored for your needs.
+
 
 - As close to your code as possible
 - Single project, multiple source control repos

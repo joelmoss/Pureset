@@ -45,7 +45,6 @@ class IssuesController < ApplicationController
     redirect_to issues_url, notice: 'Issue was successfully destroyed.'
   end
 
-
   private
 
     # Use callbacks to share common setup or constraints between actions.
@@ -57,5 +56,4 @@ class IssuesController < ApplicationController
     def issue_params
       params.require(:issue).permit(:summary, :description)
     end
-
 end

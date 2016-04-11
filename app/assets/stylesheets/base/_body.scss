@@ -2,23 +2,23 @@
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
 html {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 // Default body styles
 body {
-	color: $color-secondary;
-	font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  color: $color-secondary;
+  font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-size: 14px;
-	font-weight: 300;
-	line-height: 1.6;
+  font-weight: 300;
+  line-height: 1.6;
 }
 
 // Set box-sizing globally to handle padding and border widths
 *,
-*:after,
-*:before {
-	box-sizing: inherit;
+*::after,
+*::before {
+  box-sizing: inherit;
 }
 
 
@@ -26,26 +26,26 @@ body {
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
 main {
-	@extend .container;
-  @extend .clearfix;
+  @extend %container;
+  @extend %clearfix;
 
   aside {
     float: left;
-    width: 50px;
     margin: 32px 0;
+    width: 50px;
 
     a {
-      padding: 4px 8px 4px 4px;
-      border-right: 1px solid #eee;
-      margin-left: 4px;
-      font-size: 16px;
+      border-right: 1px solid $color-tertiary;
       display: inline-block;
-      width: 28px;
+      font-size: 16px;
+      margin-left: 4px;
+      padding: 4px 8px 4px 4px;
       text-align: center;
+      width: 28px;
 
       &:hover {
         border-right-color: $color-primary;
-        color: #000;
+        color: $color-black;
       }
     }
 
@@ -56,12 +56,12 @@ main {
     }
   }
 
-  #outer-content {
+  .outer-content {
     float: left;
     width: 1030px;
 
     section {
-      @extend .content;
+      @extend %content;
     }
   }
 }
