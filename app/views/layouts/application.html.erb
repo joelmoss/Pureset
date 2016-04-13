@@ -21,22 +21,22 @@
         <%- if user_signed_in? %>
           <span><%= avatar_image(current_user) %> <%= current_user %></span>
         <% else %>
-          <span><%= link_to semantic_icon('sign-in', 'Sign in'), new_user_session_path %></span>
+          <span><%= link_to icon('sign-in', 'Sign in'), new_user_session_path %></span>
         <%- end -%>
       </nav>
     </header>
 
     <main>
       <aside>
-        <%= link_to semantic_icon('home'), :root %>
+        <%= link_to icon('home'), :root %>
         <%- if user_signed_in? %>
           <span></span>
-          <%= link_to semantic_icon('building-o'), organizations_path %>
-          <%= link_to semantic_icon('briefcase'), :root %>
-          <%= link_to semantic_icon('inbox'), :root %>
+          <%= link_to icon('building-o'), organizations_path %>
+          <%= link_to icon('briefcase'), :root %>
+          <%= link_to icon('inbox'), :root %>
           <span></span>
-          <%= link_to semantic_icon('settings'), :root %>
-          <%= link_to semantic_icon('sign-out'), destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to icon('settings'), :root %>
+          <%= link_to icon('sign-out'), destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
         <%- else -%>
           &nbsp;
         <%- end -%>

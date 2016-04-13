@@ -1,15 +1,10 @@
-# Linter Options
-options:
-  # Don't merge default rules
-  merge-default-rules: true
-  # Set the formatter to 'html'
-  formatter: html
-  # Output file instead of logging results
-# File Options
-files:
-  include: 'app/assets/stylesheets/**/*.s+(a|c)ss'
-  ignore:
-    - 'app/vendor/**/*.*'
+scss_files: 'app/assets/stylesheets/**/*.scss'
 
-# Default severity of all linters.
-severity: warning
+linters:
+  FinalNewline:
+    enabled: true
+    present: false
+
+  SelectorFormat:
+    enabled: true
+    convention: snake_case # or 'strict_BEM', or 'hyphenated_BEM', or 'snake_case', or 'camel_case', or a regex pattern

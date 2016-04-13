@@ -20,7 +20,7 @@
       <div class="ui stacked segment secondary">
         <div class="field <%= 'error' if f.object.errors.include? :email %>">
           <div class="ui left icon input">
-            <%= semantic_icon :mail %>
+            <%= icon :mail %>
             <%= f.input_field :email, required: true, autofocus: true, placeholder: 'Your email address...' %>
           </div>
         </div>

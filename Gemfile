@@ -12,13 +12,14 @@ gem 'github-markup', require: 'github/markup'
 gem 'redcarpet'
 
 # Asset pipeline gems
-gem 'sass-rails', '~> 5.0'
+gem 'sprockets', '4.0.0.beta2'
+gem 'sass-rails', '6.0.0.beta1'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
-gem 'turbolinks'
-gem 'semantic-ui-sass'
 gem 'autoprefixer-rails'
 gem 'babel-transpiler'
+gem 'turbolinks', '~> 5.x'
+gem 'coffee-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -46,7 +47,7 @@ group :development do
   gem 'guard-bundler', require: false
   gem 'guard-rspec', '~> 4.6.5', require: false
   gem 'guard-rubocop', require: false
-  gem 'guard-scss_lint', require: false
+  gem 'guard-scss_lint', '~>0.1.4', require: false, git: 'https://github.com/joelmoss/guard-scss_lint.git'
 
   gem 'letter_opener'
   gem 'better_errors'
