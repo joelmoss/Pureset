@@ -1,20 +1,37 @@
 # Pureset
 
 > Better issue management for developers|product managers|QA engineers, where the experience is
-> tailored for your needs.
+> tailored to your needs.
 
+
+## For Developers
 
 - As close to your code as possible
 - Single project, multiple source control repos
-- Tight integration with Github, BitBucket (others?)
+- Tight integration with Github
+  - PR's
+  - Releases
+
+## For Product Managers
+
+- ?
+
+## For QA engineers
+
+- What issues need QA?
+- Separate QA feedback loop
+-
+
+## For everyone
+
 - Issues can be public to all, or private to those you mention
 - Sub-tasks
 - Convert issue into a milestone
 - User assignments
 - Labels (Github-style)
-- Manage releases via pull requests
 - powerful searching and filtering, with ability to remember searches
 - Github style mentions
+- bots?
 - plugins: enable certain features with plugins (eg. QA workflow)
 - User dashboard
   - What am I working on right now?

@@ -10,24 +10,21 @@
 // defined in the other CSS/SCSS files in this directory. It is generally better to create a new
 // file per style scope.
 //
-//= require normalize
-//= require flexbox
 //= require include_media
 //= require_self
 //
 
-@import "variables";
+@import 'variables';
+@import 'semantic-ui';
+@import 'balloon';
 
-@import "font-awesome-sprockets";
-@import "font-awesome";
+// @import 'base/utilities';
+// @import 'base/body';
+// @import 'base/buttons';
+// @import 'base/errors';
+// @import 'base/forms';
+// @import 'base/spacing';
+// @import 'base/type';
+// @import 'base/header';
 
-@import "base/utilities";
-@import "base/body";
-@import "base/buttons";
-@import "base/errors";
-@import "base/forms";
-@import "base/spacing";
-@import "base/type";
-@import "base/header";
-
-@import "pages/*";
+@import 'pages/*';

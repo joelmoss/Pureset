@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.3.0'
 
-gem 'rails', '>= 5.0.0.beta3', '< 5.1'
+gem 'rails', '>= 5.0.0.beta3'
 gem 'pg', '~> 0.18'
 gem 'puma'
 gem 'redis', '~> 3.0'
@@ -16,7 +16,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'font-awesome-sass'
+gem 'semantic-ui-sass'
 gem 'autoprefixer-rails'
 gem 'babel-transpiler'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -40,12 +40,14 @@ end
 group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
   gem 'guard-rails', require: false
   gem 'guard-livereload', require: false
   gem 'guard-bundler', require: false
   gem 'guard-rspec', '~> 4.6.5', require: false
   gem 'guard-rubocop', require: false
   gem 'guard-scss_lint', require: false
+
   gem 'letter_opener'
   gem 'better_errors'
   gem 'binding_of_caller'

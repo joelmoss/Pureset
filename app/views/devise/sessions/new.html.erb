@@ -1,14 +1,45 @@
-<h1>Sign in</h1>
+<div class="ui middle aligned center aligned container grid">
+  <div class="column">
+    <h2 class="ui image">
+      <%= image_tag 'logo.png', class: 'image' %>
+    </h2>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :login, required: true, autofocus: true, placeholder: 'Username or email...' %>
-    <%= f.input :password, required: true %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
+    <% if alert %>
+      <div class="ui error message">
+        <%= alert %>
+      </div>
+    <% end %>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign in" %> or <%= link_to "Sign up", new_user_registration_path %>
-    | <%= link_to "Forgot your password?", new_user_password_path %>
+    <% if notice %>
+      <div class="ui warning message">
+        <%= notice %>
+      </div>
+    <% end %>
+
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "large #{'error' unless resource.valid?}" }) do |f| %>
+      <%= f.input_field :remember_me, as: :hidden, value: 1 %>
+
+      <div class="ui stacked segment secondary">
+        <div class="field">
+          <div class="ui left icon input">
+            <%= semantic_icon :user %>
+            <%= f.input_field :login, required: true, autofocus: true, placeholder: 'Username or email...' %>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <%= semantic_icon :lock %>
+            <%= f.input_field :password, required: true, placeholder: 'Password' %>
+          </div>
+        </div>
+        <%= f.button :submit, 'Login', class: 'fluid large primary' %>
+      </div>
+    <% end %>
+
+    <div class="ui message small">
+      Noobie? <%= link_to 'Sign Up', new_user_registration_path %>
+      &nbsp;&nbsp;&ndash;&nbsp;&nbsp;&nbsp;
+      Forgot your password? <%= link_to 'Get a new one!', new_user_password_path %>
+    </div>
   </div>
-<% end %>
+</div>

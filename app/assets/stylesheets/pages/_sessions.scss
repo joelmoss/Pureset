@@ -1,5 +1,14 @@
-body.sessions main .content {
-  margin-bottom: 80px;
-  margin-top: 80px;
-  width: 400px;
+.controller_sessions {
+  .grid {
+    height: 100%;
+  }
+
+  .column {
+    max-width: 450px;
+  }
+
+  .ui.message {
+    font-size: 1rem;
+    text-align: left;
+  }
 }
