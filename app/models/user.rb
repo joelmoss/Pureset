@@ -18,7 +18,7 @@ class User < Account
     login = conditions.delete(:login)
     if login
       opts = { value: login.downcase }
-      find_by(conditions.to_hash).find_by(['username = :value OR email = :value', opts])
+      where(conditions.to_hash).find_by(['username = :value OR email = :value', opts])
     elsif conditions.key?(:username) || conditions.key?(:email)
       find_by conditions.to_hash
     end
