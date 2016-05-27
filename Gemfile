@@ -47,7 +47,6 @@ group :development do
   gem 'guard-bundler', require: false
   gem 'guard-rspec', '~> 4.6.5', require: false
   gem 'guard-rubocop', require: false
-  gem 'guard-scss_lint', '~>0.1.4', require: false, git: 'https://github.com/joelmoss/guard-scss_lint.git'
 
   gem 'letter_opener'
   gem 'better_errors'

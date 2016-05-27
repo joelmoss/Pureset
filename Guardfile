@@ -147,7 +147,3 @@ guard :rspec, cmd: "bundle exec rspec" do
     Dir[File.join("**/#{m[1]}.feature")][0] || "spec/acceptance"
   end
 end
-
-guard 'scss_lint' do
-  watch(%r{^app/assets/stylesheets/.+.scss})
-end
