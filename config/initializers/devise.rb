@@ -270,11 +270,3 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 end
-
-Rails.application.config.to_prepare do
-  Devise::SessionsController.layout 'skeleton'
-  Devise::RegistrationsController.layout proc { user_signed_in? ? 'application' : 'skeleton' }
-  # Devise::ConfirmationsController.layout 'devise'
-  # Devise::UnlocksController.layout 'devise'
-  Devise::PasswordsController.layout proc { user_signed_in? ? 'application' : 'skeleton' }
-end

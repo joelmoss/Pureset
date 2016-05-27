@@ -13,10 +13,23 @@
 //= require_self
 //
 
-@import url(https://fonts.googleapis.com/css?family=Lato);
-@import 'variables';
-
 @import 'include_media';
+@import url(https://fonts.googleapis.com/css?family=Lato);
 
-@import 'layout/*';
+// Mixins
+@import 'components/color';
+
+// Variables
+@import 'components/variables';
+
+// Reset
+@import 'normalize';
+
+// Components
+@import 'components/global';
+@import 'components/layout/*';
+@import 'components/buttons';
+@import 'components/waves';
+@import 'components/forms/forms';
+
 @import 'pages/*';

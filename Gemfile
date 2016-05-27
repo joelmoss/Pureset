@@ -39,6 +39,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'web-console', '~> 3.0'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
@@ -49,8 +50,6 @@ group :development do
   gem 'guard-rubocop', require: false
 
   gem 'letter_opener'
-  gem 'better_errors'
-  gem 'binding_of_caller'
 end
 
 group :test do

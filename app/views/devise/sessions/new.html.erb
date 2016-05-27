@@ -1,45 +1,27 @@
-<div class="ui middle aligned center aligned container grid">
-  <div class="column">
-    <h2 class="ui image">
-      <%= image_tag 'logo.png', class: 'image' %>
-    </h2>
+<div>
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "large #{'error' unless resource.valid?}" }) do |f| %>
+    <%= f.input_field :remember_me, as: :hidden, value: 1 %>
 
-    <% if alert %>
-      <div class="ui error message">
-        <%= alert %>
-      </div>
-    <% end %>
-
-    <% if notice %>
-      <div class="ui warning message">
-        <%= notice %>
-      </div>
-    <% end %>
-
-    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "large #{'error' unless resource.valid?}" }) do |f| %>
-      <%= f.input_field :remember_me, as: :hidden, value: 1 %>
-
-      <div class="ui stacked segment secondary">
-        <div class="field">
-          <div class="ui left icon input">
-            <%= icon :user %>
-            <%= f.input_field :login, required: true, autofocus: true, placeholder: 'Username or email...' %>
-          </div>
+    <div class="ui stacked segment secondary">
+      <div class="field">
+        <div class="ui left icon input">
+          <%= icon :user %>
+          <%= f.input_field :login, required: true, autofocus: true, placeholder: 'Username or email...' %>
         </div>
-        <div class="field">
-          <div class="ui left icon input">
-            <%= icon :lock %>
-            <%= f.input_field :password, required: true, placeholder: 'Password' %>
-          </div>
-        </div>
-        <%= f.button :submit, 'Login', class: 'fluid large primary' %>
       </div>
-    <% end %>
-
-    <div class="ui message small">
-      Noobie? <%= link_to 'Sign Up', new_user_registration_path %>
-      &nbsp;&nbsp;&ndash;&nbsp;&nbsp;&nbsp;
-      Forgot your password? <%= link_to 'Get a new one!', new_user_password_path %>
+      <div class="field">
+        <div class="ui left icon input">
+          <%= icon :lock %>
+          <%= f.input_field :password, required: true, placeholder: 'Password' %>
+        </div>
+      </div>
+      <%= f.button :button, 'Login' %>
     </div>
+  <% end %>
+
+  <div class="ui message small">
+    Noobie? <%= link_to 'Sign Up', new_user_registration_path %>
+    &nbsp;&nbsp;&ndash;&nbsp;&nbsp;&nbsp;
+    Forgot your password? <%= link_to 'Get a new one!', new_user_password_path %>
   </div>
 </div>
