@@ -9,48 +9,17 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </head>
-
-  <body class="<%= controller_name %> <%= action_name %>">
+  <body class="controller_<%= controller_name %> action_<%= action_name %>">
 
     <header>
-      <div>&nbsp;</div>
-      <div id="logo">
-        <%= link_to image_tag('logo.png', width: 168), :root %>
+      <div class="container">
+        <%= image_tag 'logo_label.png' %>
       </div>
-      <nav>
-        <%- if user_signed_in? %>
-          <span><%= avatar_image(current_user) %> <%= current_user %></span>
-        <% else %>
-          <span><%= link_to icon('sign-in', 'Sign in'), new_user_session_path %></span>
-        <%- end -%>
-      </nav>
     </header>
 
-    <main>
-      <aside>
-        <%= link_to icon('home'), :root %>
-        <%- if user_signed_in? %>
-          <span></span>
-          <%= link_to icon('building-o'), organizations_path %>
-          <%= link_to icon('briefcase'), :root %>
-          <%= link_to icon('inbox'), :root %>
-          <span></span>
-          <%= link_to icon('settings'), :root %>
-          <%= link_to icon('sign-out'), destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <%- else -%>
-          &nbsp;
-        <%- end -%>
-      </aside>
-      <div class="outer-content">
-        <section>
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
-        </section>
-
-        <section class="content">
-          <%= yield %>
-        </section>
-      </div>
+    <main class="container">
+      <%= semantic_flash %>
+      <%= yield %>
     </main>
 
   </body>

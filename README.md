@@ -37,6 +37,19 @@
   - What am I working on right now?
   - What's next?
 
+## For indivuduals
+
+states:
+  todo
+  doing
+  done
+
+### State exclusive labels
+Labels that can only be used on a task with a specific state.
+
+### Generic Labels
+
+
 
 
 ## URL Schema
