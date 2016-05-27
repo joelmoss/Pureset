@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
-ruby '2.3.0'
+ruby '2.3.1'
 
-gem 'rails', '>= 5.0.0.beta3'
+gem 'rails', '>= 5.0.0.rc1'
 gem 'pg', '~> 0.18'
 gem 'puma'
 gem 'redis', '~> 3.0'
-gem 'devise', '4.0.0.rc2'
+gem 'devise'
 gem 'simple_form'
 gem 'github-markup', require: 'github/markup'
 gem 'redcarpet'
@@ -24,7 +24,7 @@ gem 'coffee-rails'
 # gem 'therubyracer', platforms: :ruby
 
 group :development, :test do
-  gem 'rubocop', '~> 0.39.0'
+  gem 'rubocop', '~> 0.40.0'
   gem 'rubocop-rspec'
   gem 'byebug'
   gem 'bundler-audit'
@@ -45,7 +45,7 @@ group :development do
   gem 'guard-rails', require: false
   gem 'guard-livereload', require: false
   gem 'guard-bundler', require: false
-  gem 'guard-rspec', '~> 4.6.5', require: false
+  gem 'guard-rspec', '~> 4.7.0', require: false
   gem 'guard-rubocop', require: false
 
   gem 'letter_opener'
