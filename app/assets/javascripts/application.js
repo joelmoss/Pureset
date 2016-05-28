@@ -13,5 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require velocity
+//= require global
 //= require_tree ./components
 //= require_tree .

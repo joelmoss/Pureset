@@ -13,13 +13,25 @@
 
     <header>
       <div class="container">
-        <%= image_tag 'logo_label.png', width: 105, height: 66 %>
+        <section class="avatar btn-floating waves-effect waves-dark white">
+          <%= link_to image_tag("//www.gravatar.com/avatar/#{current_user.gravatar_hash}?s=28", width: 28, height: 28), edit_user_registration_path %>
+        </section>
+        <section class="logo">
+          <%= link_to image_tag('logo_label.png', width: 105, height: 66), :root %>
+        </section>
+        <section class="navigation">
+        </section>
       </div>
     </header>
 
     <main class="container">
-      <%= semantic_flash %>
-      <%= yield %>
+      <div>
+        <aside>&nbsp;</aside>
+        <section>
+          <%= semantic_flash %>
+          <%= yield %>
+        </section>
+      </div>
     </main>
 
   </body>

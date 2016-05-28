@@ -23,4 +23,8 @@ class User < Account
       find_by conditions.to_hash
     end
   end
+
+  def gravatar_hash
+    @gravatar_hash ||= Digest::MD5.hexdigest(email)
+  end
 end
