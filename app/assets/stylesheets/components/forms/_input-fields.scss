@@ -123,25 +123,13 @@ textarea {
 
 // Styling for input field wrapper
 .input {
-  // Gutter spacing
-  &.col {
-    label {
-      left: 1.5rem / 2;
-    }
-
-    .prefix ~ label,
-    .prefix ~ .validate ~ label {
-      width: calc(100% - 3rem - 1.5rem);
-    }
-  }
-
   position: relative;
-  margin-top: 1rem;
+  margin-top: 2rem;
 
   label {
     color: $input-border-color;
     position: absolute;
-    top: 0.8rem;
+    top: 0.5rem;
     left: 0;
     font-size: 1rem;
     cursor: text;
@@ -237,7 +225,7 @@ textarea {
   height: $input-height;
   background-color: transparent;
   overflow-y: hidden; /* prevents scroll bar flash */
-  padding: 1.6rem 0; /* prevents text jump on Enter keypress */
+  padding: 1rem 0 1.6rem; /* prevents text jump on Enter keypress */
   resize: none;
   min-height: $input-height;
 }

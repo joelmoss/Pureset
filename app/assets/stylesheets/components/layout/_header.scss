@@ -5,6 +5,12 @@ header {
   padding-top: 18px;
   border-top: 2px solid $button-raised-background;
 
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: white;
+  z-index: 1;
+
   section {
     float: left;
 

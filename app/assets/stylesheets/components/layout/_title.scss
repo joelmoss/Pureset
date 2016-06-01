@@ -1,0 +1,18 @@
+h1 {
+  margin-bottom: 2rem;
+  border-bottom: 12px solid color("blue-grey", "lighten-5");
+  font-weight: 300;
+  text-transform: uppercase;
+  line-height: 22px;
+  margin-top: 0;
+
+  position: fixed;
+  width: 100%;
+  top: 86px;
+  background-color: white;
+  z-index: 1;
+
+  .container {
+    padding-left: 125px;
+  }
+}
