@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
+
   resources :organizations
   resources :issues
+  resources :projects
 
   get ':username', to: 'accounts#show'
 

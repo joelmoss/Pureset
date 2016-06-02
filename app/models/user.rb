@@ -8,6 +8,8 @@ class User < Account
   # persisted field like 'username'
   attr_accessor :login
 
+  has_many :projects, as: :accountable
+
   validates :username, presence: true,
                        uniqueness: { case_sensitive: false }
 

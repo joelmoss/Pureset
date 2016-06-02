@@ -8,6 +8,7 @@ gem 'puma'
 gem 'redis', '~> 3.0'
 gem 'devise'
 gem 'simple_form'
+gem 'stringex'
 gem 'github-markup', require: 'github/markup'
 gem 'redcarpet'
 
