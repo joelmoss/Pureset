@@ -1,7 +1,19 @@
 # Pureset
 
-> Better issue management for developers|product managers|QA engineers, where the experience is
-> tailored to your needs.
+> Task manager for anyone
+
+# Modes
+Pureset has several modes that can be used at any time, and by anyone. Each issue belongs to a mode,
+and is tailored to that mode. For example, the Software Development Mode may feature bugs, tasks,
+versions and QA.
+
+The default mode is a regular task manager or ToDo list.
+
+The following Modes are available:
+ - Personal ToDo list (default)
+ - Software Development
+ - Project Management
+ - Marketing
 
 
 ## For Developers
