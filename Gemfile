@@ -9,6 +9,7 @@ gem 'redis', '~> 3.0'
 gem 'devise'
 gem 'simple_form'
 gem 'stringex'
+gem 'strip_attributes'
 gem 'github-markup', require: 'github/markup'
 gem 'redcarpet'
 
