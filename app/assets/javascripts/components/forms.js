@@ -1,4 +1,5 @@
 $(document).on('turbolinks:load', function() {
+  $('select').material_select();
 
   // Function to update labels of text fields
   Materialize.updateTextFields = function() {
@@ -25,9 +26,7 @@ $(document).on('turbolinks:load', function() {
   });
 
   // Add active if input element has been pre-populated on document ready
-  $(document).ready(function() {
-    Materialize.updateTextFields();
-  });
+  Materialize.updateTextFields();
 
   // HTML DOM FORM RESET handling
   $(document).on('reset', function(e) {

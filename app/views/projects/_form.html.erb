@@ -1,0 +1,12 @@
+<%= simple_form_for @project do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :account, collection: current_user.accountables, selected: current_user, prompt: 'Choose an owner' %>
+    <%= f.input :name %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

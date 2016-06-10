@@ -13,6 +13,8 @@ $success-color: color("green", "base") !default;
 $error-color: color("red", "base") !default;
 $link-color: color("light-blue", "darken-1") !default;
 
+$off-black: rgba(0, 0, 0, 0.87) !default;
+
 
 /* 2. Buttons
    ========================================================================== */
@@ -97,3 +99,12 @@ $switch-checked-lever-bg: desaturate(lighten($secondary-color, 25%), 25%) !defau
 $switch-unchecked-bg: #F1F1F1 !default;
 $switch-unchecked-lever-bg: #818181 !default;
 $switch-radius: 15px !default;
+
+
+/* 4. Dropdown
+   ========================================================================== */
+
+$dropdown-bg-color: #fff !default;
+$dropdown-hover-bg-color: #eee !default;
+$dropdown-color: $secondary-color !default;
+$dropdown-item-height: 50px !default;

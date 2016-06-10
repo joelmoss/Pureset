@@ -29,4 +29,9 @@ class User < Account
   def gravatar_hash
     @gravatar_hash ||= Digest::MD5.hexdigest(email)
   end
+
+  # TODO: include the current user's organizations
+  def accountables
+    [self].map { |a| [a.username, a.slug] }
+  end
 end

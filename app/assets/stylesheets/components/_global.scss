@@ -17,6 +17,19 @@ body {
   padding-top: 152px;
 }
 
+ul {
+  padding: 0;
+  list-style-type: none;
+
+  &.browser-default {
+    list-style-type: initial;
+  }
+
+  li {
+    list-style-type: none;
+  }
+}
+
 a {
   color: $link-color;
   text-decoration: none;
