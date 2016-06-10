@@ -35,9 +35,9 @@ group :development, :test do
 
   # we need to be explicit about loading the rspec beta gems, otherwise guard-rspec will fail.
   # See https://github.com/guard/guard-rspec/issues/360
-  gem 'rspec', '3.5.0.beta3'
-  gem 'rspec-core', '3.5.0.beta3'
-  gem 'rspec-rails', '3.5.0.beta3'
+  gem 'rspec', '3.5.0.beta4'
+  gem 'rspec-core', '3.5.0.beta4'
+  gem 'rspec-rails', '3.5.0.beta4'
 end
 
 group :development do
