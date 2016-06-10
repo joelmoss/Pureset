@@ -17,10 +17,15 @@
           <%= link_to image_tag("//www.gravatar.com/avatar/#{current_user.gravatar_hash}?s=28", width: 28, height: 28), edit_user_registration_path %>
         </section>
         <section class="logo">
-          <%= link_to image_tag('logo_label.png', width: 105, height: 66), :root %>
+          <%= link_to image_tag('tmp.png', width: 113, height: 72), :root %>
         </section>
-        <section class="navigation">
-        </section>
+        <nav>
+          <ul>
+            <li><%= link_to 'Projects', projects_path, class: 'current' %></li>
+            <li><%= link_to 'Users', projects_path %></li>
+            <li><%= link_to 'Issues', projects_path %></li>
+          </ul>
+        </nav>
       </div>
     </header>
 

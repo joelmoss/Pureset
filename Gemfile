@@ -22,6 +22,7 @@ gem 'autoprefixer-rails'
 gem 'babel-transpiler'
 gem 'turbolinks', '~> 5.x'
 gem 'coffee-rails'
+gem 'font-awesome-sass'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
