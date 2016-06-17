@@ -19,6 +19,11 @@ nav ul {
       font-weight: 300;
       padding: 0 5px 6px;
 
+      &:hover {
+        color: #000;
+        border-bottom-color: $button-raised-background;
+      }
+
       &.current {
         color: #23394F;
         border-bottom: 3px solid $button-raised-background;
