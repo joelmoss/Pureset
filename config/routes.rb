@@ -3,9 +3,12 @@ Rails.application.routes.draw do
 
   resources :organizations
   resources :issues
-  resources :projects
+  resources :projects, only: [:index, :new, :create]
 
-  get ':username', to: 'accounts#show'
+  scope ':username' do
+    get '', to: 'accounts#show', as: :account
+    get ':project', to: 'projects#show', as: :project
+  end
 
   root 'home#index'
 

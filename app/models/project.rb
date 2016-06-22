@@ -1,5 +1,5 @@
 class Project < ApplicationRecord
-  belongs_to :account, polymorphic: true
+  belongs_to :accountable, polymorphic: true
 
   strip_attributes
   acts_as_url :name, url_attribute: :slug,
