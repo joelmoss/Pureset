@@ -3,7 +3,7 @@ header {
   background: transparent image-url('top_bar_bg.png') repeat-x;
   height: 86px;
   padding-top: 18px;
-  border-top: 2px solid $button-raised-background;
+  border-top: 2px solid $color-teal;
   position: fixed;
   width: 100%;
   top: 0;
@@ -15,8 +15,6 @@ header {
 
     &.avatar {
       float: right;
-      position: relative;
-      top: -10px;
       text-align: center;
 
       &.active {
@@ -25,27 +23,24 @@ header {
         }
       }
 
-      ul {
-        padding: 0;
-        text-align: center;
+      a {
+        background-color: $color-white;
         position: absolute;
-        top: 64px;
-        margin: 0;
-        visibility: hidden;
+        top: 7px;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+        transition: .3s;
 
-        li {
-          list-style-type: none;
-          margin-bottom: 15px;
-        }
-
-        a.btn-floating {
-          opacity: 0;
+        &:hover {
+          box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
         }
       }
 
       img {
         border-radius: 50%;
-        margin-top: 4px;
+        margin-top: 3px;
       }
     }
   }

@@ -1,0 +1,39 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: $color-grey;
+  background-color: white;
+  padding-top: 120px;
+}
+
+a {
+  color: $color-blue;
+  text-decoration: none;
+
+  // Gets rid of tap active state
+  -webkit-tap-highlight-color: transparent;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+
+  &.browser-default {
+    list-style-type: initial;
+  }
+
+  li {
+    list-style-type: none;
+  }
+}

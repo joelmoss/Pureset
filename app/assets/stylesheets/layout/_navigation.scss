@@ -11,8 +11,8 @@ nav ul {
     }
 
     a {
-      color: #666;
-      border-bottom: 1px solid #666;
+      color: $color-grey-dark;
+      border-bottom: 1px solid $color-grey-dark;
       font-size: 15px;
       letter-spacing: 0.5px;
       text-transform: uppercase;
@@ -20,13 +20,13 @@ nav ul {
       padding: 0 5px 6px;
 
       &:hover {
-        color: #000;
-        border-bottom-color: $button-raised-background;
+        color: $color-black;
+        border-bottom-color: $color-teal;
       }
 
       &.current {
-        color: #23394F;
-        border-bottom: 3px solid $button-raised-background;
+        color: $color-grey-blue;
+        border-bottom: 3px solid $color-teal;
         font-weight: 800;
       }
     }

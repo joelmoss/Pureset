@@ -7,14 +7,15 @@
     <%= action_cable_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag "controllers/#{controller_name_with_namespace}", media: 'all', 'data-turbolinks-track' => 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </head>
   <body class="controller_<%= controller_name %> action_<%= action_name %>">
 
     <header>
       <div class="container">
-        <section class="avatar btn-floating waves-effect waves-dark white">
-          <%= link_to image_tag("//www.gravatar.com/avatar/#{current_user.gravatar_hash}?s=28", width: 28, height: 28), edit_user_registration_path %>
+        <section class="avatar">
+          <%= link_to image_tag("//www.gravatar.com/avatar/#{current_user.gravatar_hash}?s=28", width: 28, height: 28), edit_user_registration_path, class: 'wave' %>
         </section>
         <section class="logo">
           <%= link_to image_tag('tmp.png', width: 113, height: 72), :root %>
