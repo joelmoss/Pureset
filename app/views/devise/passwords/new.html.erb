@@ -1,37 +1,9 @@
-<div class="ui middle aligned center aligned container grid">
-  <div class="column">
-    <h2 class="ui image">
-      <%= image_tag 'logo.png', class: 'image' %>
-    </h2>
+<% page_title 'Reset Your Password' %>
 
-    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "large #{'error' unless resource.valid?}" }) do |f| %>
-
-      <% unless f.object.errors.blank? %>
-        <div class="ui red message">
-          <div class="header"><%= f.error_notification %></div>
-          <ul>
-            <% f.object.errors.full_messages_for(:email).each do |msg| %>
-              <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-
-      <div class="ui stacked segment secondary">
-        <div class="field <%= 'error' if f.object.errors.include? :email %>">
-          <div class="ui left icon input">
-            <%= icon :mail %>
-            <%= f.input_field :email, required: true, autofocus: true, placeholder: 'Your email address...' %>
-          </div>
-        </div>
-        <%= f.button :submit, 'Send me reset password instructions', class: 'fluid large primary' %>
-      </div>
-    <% end %>
-
-    <div class="ui message small">
-      Noobie? <%= link_to 'Sign Up', new_user_registration_path %>
-      &nbsp;&nbsp;&ndash;&nbsp;&nbsp;&nbsp;
-      Already signed up? <%= link_to 'Sign In', new_user_session_path %>
-    </div>
-  </div>
-</div>
+<%= simple_form_for resource, as: resource_name, url: password_path(resource_name), html: { method: :post } do |f| %>
+  <%= f.input :email, required: true, autofocus: true, placeholder: 'Your email address...' %>
+  <%= f.button :submit, 'Send me reset password instructions' %>&nbsp;&nbsp;&nbsp;
+  Noobie? <%= link_to 'Sign Up', new_user_registration_path %>
+  &nbsp;&ndash;&nbsp;&nbsp;
+  Already signed up? <%= link_to 'Sign In', new_user_session_path %>
+<% end %>

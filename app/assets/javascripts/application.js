@@ -13,5 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require semantic-ui/transitions
+//= require semantic-ui/dropdown
 //= require_tree ./components
 //= require_tree .

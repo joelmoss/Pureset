@@ -1,46 +1,10 @@
-<div>
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'large' }) do |f| %>
-    <% unless f.object.errors.blank? %>
-      <div class="ui red message">
-        <div class="header"><%= f.error_notification %></div>
-        <ul>
-          <% f.object.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+<% page_title 'Sign Up' %>
 
-    <div class="ui stacked segment secondary">
-      <div class="field <%= 'error' if f.object.errors.include? :email %>">
-        <div class="ui left icon input">
-          <%= icon :mail %>
-          <%= f.input_field :email, required: true, autofocus: true, placeholder: 'Your email address...' %>
-        </div>
-      </div>
-      <div class="field <%= 'error' if f.object.errors.include? :username %>">
-        <div class="ui left icon input">
-          <%= icon :user %>
-          <%= f.input_field :username, required: true, placeholder: 'Choose a username...' %>
-        </div>
-      </div>
-      <div class="field <%= 'error' if f.object.errors.include? :password %>">
-        <div class="ui left icon input">
-          <%= icon :lock %>
-          <%= f.input_field :password, required: true, placeholder: 'Choose a password...' %>
-        </div>
-      </div>
-      <div class="field <%= 'error' if f.object.errors.include? :password_confirmation %>">
-        <div class="ui left icon input">
-          <%= icon :lock %>
-          <%= f.input_field :password_confirmation, required: true, placeholder: 'Type your password again...' %>
-        </div>
-      </div>
-      <%= f.button :button, 'Sign Up' %>
-    </div>
-  <% end %>
+<%= simple_form_for resource, as: resource_name, url: registration_path(resource_name) do |f| %>
+  <%= f.input :email, required: true, autofocus: true, placeholder: 'Your email address...' %>
+  <%= f.input :username, required: true, placeholder: 'Choose a username...' %>
+  <%= f.input :password, required: true, placeholder: 'Choose a password...' %>
+  <%= f.input :password_confirmation, required: true, placeholder: 'Type your password again...' %>
 
-  <div class="ui message">
-    Already signed up? <%= link_to 'Sign In', new_user_session_path %>
-  </div>
-</div>
+  <%= f.button :button, 'Sign Up' %> Already signed up? <%= link_to 'Sign in here!', new_user_session_path %>
+<% end %>
