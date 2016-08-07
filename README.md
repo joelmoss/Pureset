@@ -1,6 +1,20 @@
 # Pureset
 
-> Task manager for anyone
+> A task manager for *
+>   Personal ToDo
+>   Project Manager
+>   Bug Tracker
+>   Task Manager
+
+Pureset is built upon the idea that no matter what kind of task management you use, each task is
+essentially the same thing; simply a unit of work - be that a project, a bug or simply a ToDo.
+
+A ticket is a bug, a bug is a task, a task is a ToDo...
+
+So if the above is true, and everything in Pureset is a task, then we can begin to create
+experiences for any type of task.
+
+
 
 # Modes
 Pureset has several modes that can be used at any time, and by anyone. Each issue belongs to a mode,
