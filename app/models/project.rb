@@ -3,7 +3,7 @@ class Project < ApplicationRecord
 
   strip_attributes
   acts_as_url :name, url_attribute: :slug,
-                     scope: [ :accountable_type, :accountable_id ],
+                     scope: [:accountable_type, :accountable_id],
                      blacklist: %w( users organizations issues projects )
 
   validates :name, presence: true,
