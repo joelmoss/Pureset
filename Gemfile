@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 ruby '2.3.1'
 
-gem 'rails', '>= 5.0.0.rc1'
+gem 'railties', '~> 5.0'
+gem 'rails', '~> 5.0'
 gem 'pg', '~> 0.18'
 gem 'puma'
 gem 'redis', '~> 3.0'
@@ -14,14 +15,13 @@ gem 'github-markup', require: 'github/markup'
 gem 'redcarpet'
 
 # Asset pipeline gems
-gem 'sprockets', '4.0.0.beta2'
-gem 'sass-rails', '6.0.0.beta1'
+gem 'sprockets', git: 'https://github.com/rails/sprockets.git', ref: 'd594c80'
+gem 'sass-rails', git: 'https://github.com/rails/sass-rails.git', ref: 'dfbcc6a'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'autoprefixer-rails'
 gem 'babel-transpiler'
 gem 'turbolinks', '~> 5.x'
-gem 'coffee-rails'
 gem 'font-awesome-sass'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -33,12 +33,7 @@ group :development, :test do
   gem 'bundler-audit'
   gem 'factory_girl_rails'
   gem 'faker'
-
-  # we need to be explicit about loading the rspec beta gems, otherwise guard-rspec will fail.
-  # See https://github.com/guard/guard-rspec/issues/360
-  gem 'rspec', '3.5.0.beta4'
-  gem 'rspec-core', '3.5.0.beta4'
-  gem 'rspec-rails', '3.5.0.beta4'
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :development do
