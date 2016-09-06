@@ -3,16 +3,10 @@
 <% page_title 'Projects' %>
 
 <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-    </tr>
-  </thead>
-
   <tbody>
     <% @projects.each do |project| %>
       <tr>
-        <td><%= project.accountable %> / <%= project %></td>
+        <td><%= link_to project.accountable %> / <%= link_to project %></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,6 +1,18 @@
 <% page_title 'Your Dashboard' %>
 
-<div class="projects">
+<div class="issues">
+  <ul>
+    <% @issues.each do |issue| %>
+      <li>
+        <%= link_to issue do %>
+          <strong>[<i>#<%= issue.id %></i>] <%= issue %></strong>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<!-- <div class="projects">
   <% if @projects.present? %>
   <ul>
     <% @projects.each do |project| %>
@@ -11,16 +23,4 @@
     <h3>You've not created or been added to any projects yet. <%= link_to 'Create one now...', new_project_path %></h3>
   <% end %>
 </div>
-
-<div class="issues">
-  <ul>
-    <% @issues.each do |issue| %>
-      <li>
-        <%= link_to issue do %>
-          <strong>[<i>#<%= issue.id %></i>] <%= issue %></strong>
-        <% end %>
-        <div><%= issue.description %></div>
-      </li>
-    <% end %>
-  </ul>
-</div>
+ -->

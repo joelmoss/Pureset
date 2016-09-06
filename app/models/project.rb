@@ -1,4 +1,6 @@
 class Project < ApplicationRecord
+  include Rails.application.routes.url_helpers
+
   belongs_to :accountable, polymorphic: true
 
   strip_attributes
@@ -15,5 +17,9 @@ class Project < ApplicationRecord
 
   def to_s
     name
+  end
+
+  def path
+    project_path accountable, self
   end
 end

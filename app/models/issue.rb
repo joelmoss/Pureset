@@ -4,4 +4,8 @@ class Issue < ApplicationRecord
   def to_s
     summary
   end
+
+  def personal?
+    true
+  end
 end
