@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
-  helper_method :controller_name_with_namespace
+  helper_method :controller_name_with_namespace, :task_context
 
   # The method `controller_name` is already available as part of Rails, but will remove any
   # namespace from the name. We want this, so this method includes the namespace.
@@ -17,6 +17,16 @@ class ApplicationController < ActionController::Base
   # Delegates to the class' controller_name_with_namespace.
   def controller_name_with_namespace
     self.class.controller_name_with_namespace
+  end
+
+  def task_context
+    @task_context ||= if instance_variable_defined?(:@project)
+                        @project
+                      elsif instance_variable_defined?(:@organization)
+                        @organization
+                      elsif instance_variable_defined?(:@user)
+                        @user
+                      end
   end
 
   protected

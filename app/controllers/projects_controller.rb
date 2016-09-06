@@ -1,26 +1,16 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_account
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
-  # GET /projects
   def index
     @projects = current_user.projects.all
   end
 
-  # GET /projects/1
-  def show
-  end
-
-  # GET /projects/new
   def new
     @project = current_user.projects.build
   end
 
-  # GET /projects/1/edit
-  def edit
-  end
-
-  # POST /projects
   def create
     @project = current_user.projects.build(project_params)
     if @project.save
@@ -30,7 +20,6 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /projects/1
   def update
     if @project.update(project_params)
       redirect_to @project, notice: 'Project was successfully updated.'
@@ -39,7 +28,6 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # DELETE /projects/1
   def destroy
     @project.destroy
     redirect_to projects_url, notice: 'Project was successfully destroyed.'
@@ -47,12 +35,14 @@ class ProjectsController < ApplicationController
 
   private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_project
-      @project = current_user.projects.find_by(slug: params[:id])
+    def set_account
+      @account = Account.find_by(username: params[:account_id])
     end
 
-    # Only allow a trusted parameter "white list" through.
+    def set_project
+      @project = @account.projects.find_by(slug: params[:id])
+    end
+
     def project_params
       params.require(:project).permit(:name)
     end

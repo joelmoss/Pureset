@@ -11,7 +11,7 @@ module SemanticFlashHelper
       output += flash_container(type, message)
     end
 
-    raw(output)
+    raw(output) # rubocop:disable Rails/OutputSafety
   end
 
   def flash_container(type, message)

@@ -33,7 +33,7 @@
           <ul>
             <% if signed_in? %>
               <li><%= link_to icon(:plus, ' Create'), new_task_path, class: current_class_for(new_task_path) %></li>
-              <li><%= link_to icon(:suitcase), projects_path, class: current_class_for(projects_path) %></li>
+              <li><%= link_to icon(:suitcase), '#' %></li>
               <% end -%>
           </ul>
         </nav>

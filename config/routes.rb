@@ -3,11 +3,13 @@ Rails.application.routes.draw do
 
   resources :organizations, except: [:show]
   resources :tasks
-  resources :projects, only: [:index, :new, :create]
+  # resources :projects, only: [:index, :new, :create]
 
-  scope ':username' do
-    get '', to: 'accounts#show', as: :user
-    get ':project', to: 'projects#show', as: :project
+  get ':id', to: 'accounts#show', as: :user
+  scope ':account_id' do
+    resources :projects, path: '' do
+      resources :tasks, path: '', only: [:show, :new, :create]
+    end
   end
 
   root 'home#index'

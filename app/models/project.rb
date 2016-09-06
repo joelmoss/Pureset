@@ -6,7 +6,7 @@ class Project < ApplicationRecord
   strip_attributes
   acts_as_url :name, url_attribute: :slug,
                      scope: [:accountable_type, :accountable_id],
-                     blacklist: %w( users organizations tasks projects )
+                     blacklist: %w(users organizations tasks projects)
 
   validates :name, presence: true,
                    uniqueness: { case_sensitive: false }
