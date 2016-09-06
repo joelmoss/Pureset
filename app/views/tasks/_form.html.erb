@@ -1,4 +1,6 @@
 <%= simple_form_for @task do |f| %>
+  <%= f.error_notification %>
+
   <div class="form-inputs">
     <%= f.input :summary %>
     <%= f.input :description, as: :text %>
