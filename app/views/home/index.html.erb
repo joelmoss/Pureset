@@ -4,7 +4,7 @@
   <% if @projects.present? %>
   <ul>
     <% @projects.each do |project| %>
-      <li><%= link_to project, project %></li>
+      <li><%= link_to project, project_path(project.accountable, project) %></li>
     <% end %>
   </ul>
   <% else %>

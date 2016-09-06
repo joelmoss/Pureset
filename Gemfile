@@ -15,7 +15,7 @@ gem 'github-markup', require: 'github/markup'
 gem 'redcarpet'
 
 # Asset pipeline gems
-gem 'sprockets', git: 'https://github.com/rails/sprockets.git', ref: 'd594c80'
+gem 'sprockets', '4.0.0.beta3'
 gem 'sass-rails', git: 'https://github.com/rails/sass-rails.git', ref: 'dfbcc6a'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
@@ -27,7 +27,7 @@ gem 'font-awesome-sass'
 # gem 'therubyracer', platforms: :ruby
 
 group :development, :test do
-  gem 'rubocop', '~> 0.40.0'
+  gem 'rubocop', '~> 0.42.0'
   gem 'rubocop-rspec'
   gem 'byebug'
   gem 'bundler-audit'
@@ -42,7 +42,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   gem 'guard-rails', require: false
-  gem 'guard-livereload', require: false
   gem 'guard-bundler', require: false
   gem 'guard-rspec', '~> 4.7.0', require: false
   gem 'guard-rubocop', require: false

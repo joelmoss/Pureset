@@ -14,4 +14,8 @@ module ApplicationHelper
   def page_title(text)
     @page_title = text
   end
+
+  def current_class_for(route)
+    current_page?(route) ? 'current' : nil
+  end
 end

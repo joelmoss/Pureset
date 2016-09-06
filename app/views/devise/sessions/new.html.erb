@@ -5,6 +5,8 @@
   <%= f.input :login, required: true, autofocus: true, placeholder: 'Username or email...' %>
   <%= f.input :password, required: true, placeholder: 'Password' %>
 
-  <%= f.button :button, 'Sign In' %>
-  &nbsp;&nbsp;&nbsp;&nbsp;Need an account? <%= link_to 'Sign Up', new_user_registration_path %> &nbsp;&nbsp;&ndash;&nbsp;&nbsp; Forgot your password? <%= link_to 'Get a new one!', new_user_password_path %>
+  <div class="form-actions">
+    <%= f.button :button, 'Sign In' %>
+    &nbsp;&nbsp;&nbsp;&nbsp;Need an account? <%= link_to 'Sign Up', new_user_registration_path %> &nbsp;&nbsp;&ndash;&nbsp;&nbsp; Forgot your password? <%= link_to 'Get a new one!', new_user_password_path %>
+  </div>
 <% end %>

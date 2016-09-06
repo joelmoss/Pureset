@@ -6,5 +6,7 @@
   <%= f.input :password, required: true, placeholder: 'Choose a password...' %>
   <%= f.input :password_confirmation, required: true, placeholder: 'Type your password again...' %>
 
-  <%= f.button :button, 'Sign Up' %> Already signed up? <%= link_to 'Sign in here!', new_user_session_path %>
+  <div class="form-actions">
+    <%= f.button :button, 'Sign Up' %> Already signed up? <%= link_to 'Sign in here!', new_user_session_path %>
+  </div>
 <% end %>
