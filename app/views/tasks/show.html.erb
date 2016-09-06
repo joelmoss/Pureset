@@ -1,0 +1,10 @@
+<article>
+  <h4><strong>#<%= @task.id %></strong> <%= @task.summary %></h4>
+
+  <%= GitHub::Markup.render('task.markdown', @task.description).html_safe %>
+
+  <div>
+    <%= link_to 'Edit', edit_task_path(@task) %>
+  </div>
+
+</article>

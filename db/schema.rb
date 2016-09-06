@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160602224235) do
+ActiveRecord::Schema.define(version: 20160906221103) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,13 +37,6 @@ ActiveRecord::Schema.define(version: 20160602224235) do
     t.index ["username"], name: "index_accounts_on_username", unique: true, using: :btree
   end
 
-  create_table "issues", force: :cascade do |t|
-    t.string   "summary"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.string   "slug"
@@ -53,6 +45,13 @@ ActiveRecord::Schema.define(version: 20160602224235) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.index ["accountable_type", "accountable_id"], name: "index_projects_on_accountable_type_and_accountable_id", using: :btree
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string   "summary"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

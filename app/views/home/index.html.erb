@@ -1,11 +1,11 @@
 <% page_title 'Your Dashboard' %>
 
-<div class="issues">
+<div class="tasks">
   <ul>
-    <% @issues.each do |issue| %>
+    <% @tasks.each do |task| %>
       <li>
-        <%= link_to issue do %>
-          <strong>[<i>#<%= issue.id %></i>] <%= issue %></strong>
+        <%= link_to task do %>
+          <strong>[<i>#<%= task.id %></i>] <%= task %></strong>
         <% end %>
       </li>
     <% end %>

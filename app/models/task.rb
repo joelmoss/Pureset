@@ -1,4 +1,4 @@
-class Issue < ApplicationRecord
+class Task < ApplicationRecord
   validates :summary, presence: true
 
   def to_s

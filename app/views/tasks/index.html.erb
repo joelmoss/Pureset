@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<% page_title 'Issues' %>
+<% page_title 'Tasks' %>
 
 <table>
   <thead>
@@ -11,10 +11,10 @@
   </thead>
 
   <tbody>
-    <% @issues.each do |issue| %>
+    <% @tasks.each do |task| %>
       <tr>
-        <td>#<%= issue.id %></td>
-        <td><%= issue.summary %></td>
+        <td>#<%= task.id %></td>
+        <td><%= task.summary %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +22,4 @@
 
 <br>
 
-<%= link_to 'New Issue', new_issue_path %>
+<%= link_to 'New Task', new_task_path %>

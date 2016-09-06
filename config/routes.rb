@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :organizations, except: [:show]
-  resources :issues
+  resources :tasks
   resources :projects, only: [:index, :new, :create]
 
   scope ':username' do

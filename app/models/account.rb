@@ -4,7 +4,7 @@ class Account < ApplicationRecord
   has_many :projects
 
   strip_attributes
-  acts_as_url :username, url_attribute: :slug, blacklist: %w( users organizations issues projects )
+  acts_as_url :username, url_attribute: :slug, blacklist: %w( users organizations tasks projects )
 
   validates :name, presence: true,
                    uniqueness: { case_sensitive: false }
