@@ -36,11 +36,11 @@ class ProjectsController < ApplicationController
   private
 
     def set_account
-      @account = Account.find_by(username: params[:account_id])
+      @account = Account.find_by!(username: params[:account_id])
     end
 
     def set_project
-      @project = @account.projects.find_by(slug: params[:id])
+      @project = @account.projects.find_by!(slug: params[:id])
     end
 
     def project_params
