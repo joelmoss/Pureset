@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
-  helper_method :controller_name_with_namespace, :task_context
+  helper_method :controller_name_with_namespace, :task_context, :project_context
 
   # The method `controller_name` is already available as part of Rails, but will remove any
   # namespace from the name. We want this, so this method includes the namespace.
@@ -20,13 +20,25 @@ class ApplicationController < ActionController::Base
   end
 
   def task_context
-    @task_context ||= if instance_variable_defined?(:@project)
+    @task_context ||= if instance_variable_defined?(:@project) && !@project.new_record?
                         @project
-                      elsif instance_variable_defined?(:@organization)
+                      elsif instance_variable_defined?(:@organization) && !@organization.new_record?
                         @organization
-                      elsif instance_variable_defined?(:@user)
+                      elsif instance_variable_defined?(:@user) && !@user.new_record?
                         @user
+                      elsif signed_in?
+                        current_user
                       end
+  end
+
+  def project_context
+    @project_context ||= if instance_variable_defined?(:@organization) && !@organization.new_record?
+                           @organization
+                         elsif instance_variable_defined?(:@user) && !@user.new_record?
+                           @user
+                         elsif signed_in?
+                           current_user
+                         end
   end
 
   protected

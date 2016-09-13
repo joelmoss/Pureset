@@ -1,0 +1,19 @@
+.new_project {
+  .form-inputs {
+    @include clearfix;
+
+    > div {
+      float: left;
+
+      &:nth-child(2) {
+        padding: 25px 8px 0;
+        font-size: 22px;
+        color: $color-grey-blue;
+      }
+
+      &:last-child {
+        margin: 23px;
+      }
+    }
+  }
+}

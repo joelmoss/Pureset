@@ -3,11 +3,11 @@ Rails.application.routes.draw do
 
   resources :organizations, except: [:show]
   resources :tasks
-  # resources :projects, only: [:index, :new, :create]
 
   get ':id', to: 'accounts#show', as: :user
   scope ':account_id' do
-    resources :projects, path: '' do
+    resources :projects, only: [:index, :new, :create]
+    resources :projects, except: [:new, :create, :index], path: '' do
       resources :tasks, path: '', only: [:show, :new, :create]
     end
   end
