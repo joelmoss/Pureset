@@ -19,8 +19,8 @@
           </section>
         <% else %>
           <section class="signed-out">
-            <%= link_to 'Sign Up', new_user_registration_path, class: current_class_for(new_user_registration_path) %>
-            <%= link_to 'Sign In', new_user_session_path, class: current_class_for(new_user_session_path) %>
+            <%= link_to 'Sign Up', new_user_registration_path, class: current_class_for_route(new_user_registration_path) %>
+            <%= link_to 'Sign In', new_user_session_path, class: current_class_for_route(new_user_session_path) %>
           </section>
         <% end %>
 
@@ -31,8 +31,8 @@
         <nav>
           <ul>
             <% if signed_in? %>
-              <li><%= link_to icon(:plus, ' Create'), new_task_path, class: current_class_for(new_task_path) %></li>
-              <li><%= link_to icon(:suitcase), projects_path, class: current_class_for(projects_path) %></li>
+              <li><%= link_to icon(:plus, ' Create'), new_task_path, class: current_class_for_route(new_task_path) %></li>
+              <li><%= link_to icon(:suitcase), projects_path, class: current_class_for_controller(:projects) %></li>
               <% end -%>
           </ul>
         </nav>

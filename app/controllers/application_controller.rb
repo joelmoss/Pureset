@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
     self.class.controller_name_with_namespace
   end
 
+  # rubocop:disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
   def task_context
     @task_context ||= if instance_variable_defined?(:@project) && !@project.new_record?
                         @project
@@ -30,6 +31,7 @@ class ApplicationController < ActionController::Base
                         current_user
                       end
   end
+  # rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
 
   def project_context
     @project_context ||= if instance_variable_defined?(:@organization) && !@organization.new_record?

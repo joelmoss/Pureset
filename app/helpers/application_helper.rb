@@ -15,7 +15,11 @@ module ApplicationHelper
     @page_title = text
   end
 
-  def current_class_for(route)
-    current_page?(route) ? 'current' : nil
+  def current_class_for_route(name)
+    current_page?(name) ? 'current' : nil
+  end
+
+  def current_class_for_controller(name)
+    controller_name == name.to_s ? 'current' : nil
   end
 end

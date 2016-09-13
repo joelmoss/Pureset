@@ -20,4 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  projects:
+    create:
+      success: Project was successfully created.
+    update:
+      success: Project was successfully updated.
+    update:
+      success: Project was successfully deleted.

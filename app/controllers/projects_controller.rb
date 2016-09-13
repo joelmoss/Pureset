@@ -14,7 +14,7 @@ class ProjectsController < ApplicationController
   def create
     @project = current_user.projects.build(project_params)
     if @project.save
-      redirect_to project_url(@project.accountable, @project), notice: 'Project was successfully created.'
+      redirect_to project_url(@project.accountable, @project), notice: t('.success')
     else
       render :new
     end
@@ -22,7 +22,7 @@ class ProjectsController < ApplicationController
 
   def update
     if @project.update(project_params)
-      redirect_to project_url(@project.accountable, @project), notice: 'Project was successfully updated.'
+      redirect_to project_url(@project.accountable, @project), notice: t('.success')
     else
       render :edit
     end
@@ -30,7 +30,7 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project.destroy
-    redirect_to projects_url, notice: 'Project was successfully destroyed.'
+    redirect_to projects_url, notice: t('.success')
   end
 
   private
