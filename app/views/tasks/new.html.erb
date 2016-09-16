@@ -1,6 +1,6 @@
 <% page_title 'New Task' %>
 
-<%= simple_form_for @task do |f| %>
+<%= simple_form_for @task, path: tasks_path do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">

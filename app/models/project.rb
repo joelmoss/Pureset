@@ -2,6 +2,7 @@ class Project < ApplicationRecord
   include Rails.application.routes.url_helpers
 
   belongs_to :accountable, polymorphic: true
+  has_many :tasks, as: :contextable
 
   strip_attributes
   acts_as_url :name, url_attribute: :slug,

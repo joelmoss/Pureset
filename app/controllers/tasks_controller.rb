@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_context
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   # GET /tasks
@@ -13,7 +14,7 @@ class TasksController < ApplicationController
 
   # GET /tasks/new
   def new
-    @task = current_user.tasks.build
+    @task = task_context.tasks.build
   end
 
   # GET /tasks/1/edit
@@ -22,9 +23,9 @@ class TasksController < ApplicationController
 
   # POST /tasks
   def create
-    @task = current_user.tasks.build(task_params)
+    @task = task_context.tasks.build(task_params)
     if @task.save
-      redirect_to @task, notice: t('.success')
+      redirect_to task_url, notice: t('.success')
     else
       render :new
     end
@@ -33,7 +34,7 @@ class TasksController < ApplicationController
   # PATCH/PUT /tasks/1
   def update
     if @task.update(task_params)
-      redirect_to @task, notice: t('.success')
+      redirect_to task_url, notice: t('.success')
     else
       render :edit
     end
@@ -47,13 +48,28 @@ class TasksController < ApplicationController
 
   private
 
-    # Use callbacks to share common setup or constraints between actions.
+    def set_context
+      if params.key?(:account_id)
+        account = Account.find_by!(username: params[:account_id])
+        instance_variable_set "@#{account.type.downcase}", account
+        @project = account.projects.find_by!(slug: params[:project_id]) if params.key?(:project_id)
+      end
+    end
+
     def set_task
-      @task = Task.find(params[:id])
+      @task = task_context.tasks.find_by(sequential_id: params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def task_params
       params.require(:task).permit(:summary, :description)
+    end
+
+    def task_url
+      if @task.contextable.is_a?(Project)
+        project_task_url @task.contextable.accountable, @task.contextable, @task.sequential_id
+      else
+        super @task.contextable, @task.sequential_id
+      end
     end
 end

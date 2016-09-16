@@ -13,6 +13,7 @@ gem 'stringex'
 gem 'strip_attributes'
 gem 'github-markup', require: 'github/markup'
 gem 'redcarpet'
+gem 'sequenced'
 
 # Asset pipeline gems
 gem 'sprockets', '4.0.0.beta3'
