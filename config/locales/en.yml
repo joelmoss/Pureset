@@ -34,3 +34,10 @@ en:
       success: Task was successfully updated.
     destroy:
       success: Task was successfully deleted.
+  organizations:
+    create:
+      success: Organization was successfully created.
+    update:
+      success: Organization was successfully updated.
+    destroy:
+      success: Organization was successfully deleted.

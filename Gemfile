@@ -47,6 +47,7 @@ group :development do
   gem 'guard-rspec', '~> 4.7.0', require: false
   gem 'guard-rubocop', require: false
 
+  gem 'rack-mini-profiler'
   gem 'letter_opener'
 end
 

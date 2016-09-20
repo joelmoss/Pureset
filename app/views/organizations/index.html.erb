@@ -1,0 +1,11 @@
+<% page_title 'My Organizations' %>
+
+<% if @organizations.present? %>
+  <ul>
+    <% @organizations.each do |org| %>
+      <li><%= org %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <h4>You do not currently have any Organizations. <%= link_to 'Create one now...', new_organization_path %></h4>
+<% end -%>

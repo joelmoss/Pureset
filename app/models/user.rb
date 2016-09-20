@@ -1,4 +1,4 @@
-class User < Account
+class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable,
@@ -8,10 +8,19 @@ class User < Account
   # persisted field like 'username'
   attr_accessor :login
 
+  has_one :slug, as: :sluggable
   has_many :projects, as: :accountable
+  has_many :tasks, as: :contextable
+  has_many :members
+  has_many :organizations, through: :members
 
-  validates :username, presence: true,
-                       uniqueness: { case_sensitive: false }
+  strip_attributes
+  acts_as_url :username, url_attribute: :slug, blacklist: %w(users organizations tasks projects)
+
+  validates :username, presence: true, uniqueness: { case_sensitive: false }
+  validates :name, presence: true, uniqueness: { case_sensitive: false }
+
+  after_create :create_sluggable
 
   def self.find_for_database_authentication(warden_conditions) # rubocop:disable Metrics/AbcSize
     conditions = warden_conditions.dup
@@ -26,6 +35,14 @@ class User < Account
     end
   end
 
+  def to_s
+    username
+  end
+
+  def to_param
+    slug
+  end
+
   def gravatar_hash
     @gravatar_hash ||= Digest::MD5.hexdigest(email)
   end
@@ -34,4 +51,10 @@ class User < Account
   def accountables
     [self].map { |a| [a.username, a.slug] }
   end
+
+  private
+
+    def create_sluggable
+      create_slug slug: "/#{slug}"
+    end
 end

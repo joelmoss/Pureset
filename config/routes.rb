@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  get ':id', to: 'accounts#show', as: :user
+  resources :organizations, only: [:index, :new, :create]
+
+  get ':id', to: 'accounts#show', as: :account
   scope ':account_id' do
     resources :tasks, path: '', only: :show, constraints: { id: /\d*/ }
     resources :projects, only: [:index, :new, :create]

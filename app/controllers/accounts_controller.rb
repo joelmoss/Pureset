@@ -1,7 +1,5 @@
 class AccountsController < ApplicationController
   def show
-    @account = Account.find_by!(username: params[:id])
-  rescue ActiveRecord::RecordNotFound
-    redirect_back fallback_location: :root, alert: 'Cannot find that account'
+    @account = Slug.find_by!(slug: "/#{params[:id]}").sluggable
   end
 end
