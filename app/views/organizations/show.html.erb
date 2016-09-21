@@ -1,0 +1,11 @@
+<% page_title @organization %>
+
+<% if @organization.projects.present? %>
+  <ul>
+    <% @organization.projects.each do |preoject| %>
+      <li><%= link_to project %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <h4>This Organization has no projects. <%= link_to 'Create one now...', new_project_path %></h4>
+<% end -%>

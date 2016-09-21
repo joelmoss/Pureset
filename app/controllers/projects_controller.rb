@@ -8,11 +8,11 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @project = current_user.projects.build
+    @project = Project.new
   end
 
   def create
-    @project = current_user.projects.build(project_params)
+    @project = Project.new(project_params)
     if @project.save
       redirect_to project_url(@project.accountable, @project), notice: t('.success')
     else
@@ -36,7 +36,14 @@ class ProjectsController < ApplicationController
   private
 
     def set_account
-      @account = Account.find_by!(username: params[:account_id])
+      if params.key?(:account_id)
+        slug = Slug.find_by!(slug: "/#{params[:account_id]}")
+        slug_name = slug.sluggable_type.downcase
+        instance_variable_set "@#{slug_name}", slug.sluggable
+        @account = slug.sluggable
+      else
+        @user, @account = current_user
+      end
     end
 
     def set_project
@@ -44,6 +51,13 @@ class ProjectsController < ApplicationController
     end
 
     def project_params
-      params.require(:project).permit(:name)
+      if (accountable = params.dig(:project, :accountable))
+        accountable_type, accountable_id = accountable.split('/')
+        params[:project][:accountable_type] = accountable_type
+        params[:project][:accountable_id] = accountable_id
+        params[:project].delete :accountable
+      end
+
+      params.require(:project).permit(:name, :accountable_type, :accountable_id)
     end
 end

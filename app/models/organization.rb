@@ -1,4 +1,6 @@
 class Organization < ApplicationRecord
+  include Rails.application.routes.url_helpers
+
   has_one :slug, as: :sluggable
   has_many :projects, as: :accountable
   has_many :tasks, as: :contextable
@@ -18,6 +20,10 @@ class Organization < ApplicationRecord
 
   def to_param
     slug
+  end
+
+  def path
+    account_path self
   end
 
   private

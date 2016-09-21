@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  include Rails.application.routes.url_helpers
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable,
@@ -43,13 +45,16 @@ class User < ApplicationRecord
     slug
   end
 
+  def path
+    account_path self
+  end
+
   def gravatar_hash
     @gravatar_hash ||= Digest::MD5.hexdigest(email)
   end
 
-  # TODO: include the current user's organizations
   def accountables
-    [self].map { |a| [a.username, a.slug] }
+    ([self] + organizations).map { |a| [a.to_s, "#{a.class.name}/#{a.id}"] }
   end
 
   private

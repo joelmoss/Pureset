@@ -1,9 +1,10 @@
 <% page_title 'My Organizations' %>
 
 <% if @organizations.present? %>
+  <%= link_to 'New Organization', new_organization_path %>
   <ul>
     <% @organizations.each do |org| %>
-      <li><%= org %></li>
+      <li><%= link_to org %></li>
     <% end %>
   </ul>
 <% else %>
