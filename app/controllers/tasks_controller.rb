@@ -50,10 +50,15 @@ class TasksController < ApplicationController
 
     def set_context
       if params.key?(:account_id)
-        account = Account.find_by!(username: params[:account_id])
-        instance_variable_set "@#{account.type.downcase}", account
-        @project = account.projects.find_by!(slug: params[:project_id]) if params.key?(:project_id)
+        slug = Slug.find_by!(slug: "/#{params[:account_id]}")
+        slug_name = slug.sluggable_type.downcase
+        instance_variable_set "@#{slug_name}", slug.sluggable
+        account = slug.sluggable
+      else
+        account, @user = current_user
       end
+
+      @project = account.projects.find_by!(slug: params[:project_id]) if params.key?(:project_id)
     end
 
     def set_task
