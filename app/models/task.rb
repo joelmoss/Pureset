@@ -4,6 +4,7 @@ class Task < ApplicationRecord
   before_create :set_path
   acts_as_sequenced scope: [:contextable_id, :contextable_type]
 
+  # The available types for project based tasks.
   def self.types
     {
       'Task' => Task,
@@ -24,15 +25,13 @@ class Task < ApplicationRecord
   end
 
   def type
-    read_attribute(:type).split('::').last
+    self[:type].split('::').last
   end
 
   private
 
     def set_path
       self.path = "/#{contextable.to_param}/#{to_param}"
-      if contextable.is_a?(Project)
-        self.path = "/#{contextable.accountable.to_param}#{self.path}"
-      end
+      self.path = "/#{contextable.accountable.to_param}#{path}" if contextable.is_a?(Project)
     end
 end

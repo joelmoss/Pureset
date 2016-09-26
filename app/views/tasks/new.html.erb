@@ -4,7 +4,8 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :type, collection: Task.types %>
+    <%= f.input :type, collection: Task.types unless @task.contextable.is_a?(User) %>
+    <%= hidden_field_tag 'task[type]', 'Task::ToDo' if @task.contextable.is_a?(User) %>
     <%= f.input :summary %>
     <%= f.input :description, as: :text %>
   </div>

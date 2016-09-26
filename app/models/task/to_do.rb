@@ -1,4 +1,4 @@
 class Task
-  class Bug < Task
+  class ToDo < Task
   end
 end

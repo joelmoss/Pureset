@@ -34,4 +34,4 @@ A Project context based task requires a summary, and can be one of the following
 
  - Task (default)
  - Bug
- - User Story
+ - User Story ?
