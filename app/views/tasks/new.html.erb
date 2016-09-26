@@ -1,9 +1,10 @@
 <% page_title 'New Task' %>
 
-<%= simple_form_for @task, path: tasks_path do |f| %>
+<%= simple_form_for @task, as: :task, url: tasks_path do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :type, collection: Task.types %>
     <%= f.input :summary %>
     <%= f.input :description, as: :text %>
   </div>

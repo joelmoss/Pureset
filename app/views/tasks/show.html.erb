@@ -1,4 +1,6 @@
+<% page_title "#{@task.type} ##{@task.to_param}", subtitle: @task %>
+
 <article>
-  <h4><strong>#<%= @task.sequential_id %></strong> <%= @task.summary %></h4>
+  <h4>Notes:</h4>
   <%= GitHub::Markup.render('task.markdown', @task.description).html_safe %>
 </article>

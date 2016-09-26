@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
+  include AccountConcerns
+
   before_action :authenticate_user!
-  before_action :set_account
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -34,17 +35,6 @@ class ProjectsController < ApplicationController
   end
 
   private
-
-    def set_account
-      if params.key?(:account_id)
-        slug = Slug.find_by!(slug: "/#{params[:account_id]}")
-        slug_name = slug.sluggable_type.downcase
-        instance_variable_set "@#{slug_name}", slug.sluggable
-        @account = slug.sluggable
-      else
-        @user, @account = current_user
-      end
-    end
 
     def set_project
       @project = @account.projects.find_by!(slug: params[:id])

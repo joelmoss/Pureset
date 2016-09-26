@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160920224455) do
+ActiveRecord::Schema.define(version: 20160922161744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,12 +52,13 @@ ActiveRecord::Schema.define(version: 20160920224455) do
   create_table "tasks", force: :cascade do |t|
     t.string   "summary"
     t.text     "description"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "contextable_type"
     t.integer  "contextable_id"
     t.string   "path"
     t.integer  "sequential_id"
+    t.string   "type",             default: "Task"
     t.index ["contextable_type", "contextable_id"], name: "index_tasks_on_contextable_type_and_contextable_id", using: :btree
   end
 

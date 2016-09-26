@@ -20,5 +20,18 @@ will have a context of "project".
 The following contexts exist:
 
  - User
- - Organization
  - Project
+ - Organization
+
+### User Context
+
+Tasks created with a User context have a type of "ToDo", and consist of a "Summary" as a minimum.
+They are intended as a personal ToDo list.
+
+### Project Context
+
+A Project context based task requires a summary, and can be one of the following types:
+
+ - Task (default)
+ - Bug
+ - User Story

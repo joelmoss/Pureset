@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  include AccountConcerns
+
   before_action :authenticate_user!
   before_action :set_context
   before_action :set_task, only: [:show, :edit, :update, :destroy]
@@ -14,7 +16,7 @@ class TasksController < ApplicationController
 
   # GET /tasks/new
   def new
-    @task = task_context.tasks.build
+    @task = task_context.tasks.build(type: 'Task')
   end
 
   # GET /tasks/1/edit
@@ -49,16 +51,7 @@ class TasksController < ApplicationController
   private
 
     def set_context
-      if params.key?(:account_id)
-        slug = Slug.find_by!(slug: "/#{params[:account_id]}")
-        slug_name = slug.sluggable_type.downcase
-        instance_variable_set "@#{slug_name}", slug.sluggable
-        account = slug.sluggable
-      else
-        account, @user = current_user
-      end
-
-      @project = account.projects.find_by!(slug: params[:project_id]) if params.key?(:project_id)
+      @project = @account.projects.find_by!(slug: params[:project_id]) if params.key?(:project_id)
     end
 
     def set_task
@@ -67,7 +60,7 @@ class TasksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def task_params
-      params.require(:task).permit(:summary, :description)
+      params.require(:task).permit(:summary, :description, :type)
     end
 
     def task_url
