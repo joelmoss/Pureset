@@ -12,6 +12,14 @@ class Project < ApplicationRecord
   validates :name, presence: true,
                    uniqueness: { case_sensitive: false }
 
+  # The available project types.
+  def self.types
+    {
+      'Standard Project' => Project,
+      'Software Development' => Project::SoftwareDevelopment
+    }
+  end
+
   def to_param
     slug
   end

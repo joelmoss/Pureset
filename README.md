@@ -25,7 +25,6 @@ can be closed and marked as done, such as QA or a code review.
  - Software Development Project
 
 
-
 ## Task Contexts
 
 Every task is based upon the context they were created within. For example, if an task is created

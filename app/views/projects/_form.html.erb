@@ -1,8 +1,12 @@
 <%= simple_form_for @project, url: projects_path do |f| %>
   <div class="form-inputs">
-    <div><%= f.input :accountable, collection: current_user.accountables, selected: "#{@account.class.name}/#{@account.id}", prompt: 'Choose an owner' %></div>
-    <div>/</div>
-    <div><%= f.input :name, autofocus: true, label: 'Project Name' %></div>
-    <div><%= f.button :submit %></div>
+    <%= f.input :type, collection: Project.types, label: 'What type of project is this?' %>
+
+    <div class="project_naming">
+      <div><%= f.input :accountable, collection: current_user.accountables, selected: "#{@account.class.name}/#{@account.id}", prompt: 'Choose an owner' %></div>
+      <div>/</div>
+      <div><%= f.input :name, autofocus: true, label: 'Project Name' %></div>
+      <div><%= f.button :submit %></div>
+    </div>
   </div>
 <% end %>

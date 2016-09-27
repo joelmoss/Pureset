@@ -48,6 +48,6 @@ class ProjectsController < ApplicationController
         params[:project].delete :accountable
       end
 
-      params.require(:project).permit(:name, :accountable_type, :accountable_id)
+      params.require(:project).permit(:name, :accountable_type, :accountable_id, :type)
     end
 end
