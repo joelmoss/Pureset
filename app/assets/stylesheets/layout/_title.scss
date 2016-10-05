@@ -5,14 +5,11 @@
   h1 {
     border-bottom: 12px solid $color-grey-light;
     font-weight: 300;
+    font-size: 20px;
     text-transform: uppercase;
-    line-height: 22px;
+    line-height: 16px;
     margin-top: 0;
     width: 100%;
     background-color: white;
-  }
-
-  .container {
-    padding-left: 125px;
   }
 }

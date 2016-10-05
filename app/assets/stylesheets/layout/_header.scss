@@ -1,8 +1,7 @@
 header {
-  @include clearfix;
   background: transparent image-url('top_bar_bg.png') repeat-x;
-  height: 86px;
-  padding-top: 18px;
+  height: 80px;
+  padding-top: 16px;
   border-top: 2px solid $color-teal;
   position: fixed;
   width: 100%;
@@ -10,10 +9,8 @@ header {
   background-color: white;
   z-index: 1;
 
-  section {
-    float: left;
-
-    @import 'header/avatar';
-    @import 'header/signed_out';
-  }
+  @import 'header/logo';
+  @import 'header/navigation';
+  @import 'header/avatar';
+  @import 'header/signed_out';
 }

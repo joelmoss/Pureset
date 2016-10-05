@@ -1,0 +1,48 @@
+nav {
+  &:first-child {
+    float: right;
+  }
+
+  &:last-child ul {
+    padding-top: 22px;
+
+    li:first-child a {
+      font-weight: 400;
+      color: #000;
+    }
+  }
+
+  ul {
+    margin: 0;
+
+    li:not(.avatar) {
+      display: inline-block;
+      margin: 0 16px 0 0;
+
+      a {
+        color: $color-grey-dark;
+        border-bottom: 1px solid $color-grey-dark;
+        font-size: 15px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        font-weight: 300;
+        padding: 0 5px 6px;
+
+        &:hover {
+          color: $color-black;
+          border-bottom-color: $color-teal;
+
+          .fa {
+            color: $color-teal;
+          }
+        }
+
+        &.current {
+          color: $color-grey-blue;
+          border-bottom: 3px solid $color-teal;
+          font-weight: 800;
+        }
+      }
+    }
+  }
+}

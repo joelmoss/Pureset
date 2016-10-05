@@ -13,28 +13,29 @@
 
     <header>
       <div class="container">
-        <% if signed_in? %>
-          <section class="avatar">
-            <%= link_to image_tag("//www.gravatar.com/avatar/#{current_user.gravatar_hash}?s=28", width: 28, height: 28), edit_user_registration_path, class: 'wave' %>
-          </section>
-        <% else %>
-          <section class="signed-out">
-            <%= link_to 'Sign Up', new_user_registration_path, class: current_class_for_route(new_user_registration_path) %>
-            <%= link_to 'Sign In', new_user_session_path, class: current_class_for_route(new_user_session_path) %>
-          </section>
-        <% end %>
+        <nav>
+          <ul>
+            <% if signed_in? %>
+              <li><%= link_to icon(:suitcase, ' Projects'), projects_path, class: current_class_for_controller(:projects) %></li>
+              <li><%= link_to icon(:building, ' Orgs'), organizations_path, class: current_class_for_controller(:organizations) %></li>
 
-        <section class="logo">
-          <%= link_to image_tag('tmp.png', width: 113, height: 72), :root %>
-        </section>
+              <li class="avatar">
+                <%= link_to image_tag("//www.gravatar.com/avatar/#{current_user.gravatar_hash}?s=30", width: 30, height: 30), edit_user_registration_path, class: 'wave' %>
+              </li>
+            <% else %>
+              <li><%= link_to 'Sign Up', new_user_registration_path, class: current_class_for_route(new_user_registration_path) %></li>
+              <li><%= link_to 'Sign In', new_user_session_path, class: current_class_for_route(new_user_session_path) %></li>
+            <% end -%>
+          </ul>
+        </nav>
+
+        <%= link_to image_tag('logo.png', width: 113, height: 63), :root, class: 'logo' %>
 
         <nav>
           <ul>
             <% if signed_in? %>
               <li><%= link_to icon(:plus, ' Create'), new_task_path, class: current_class_for_route(new_task_path) %></li>
-              <li><%= link_to icon(:suitcase), projects_path, class: current_class_for_controller(:projects) %></li>
-              <li><%= link_to icon(:building), organizations_path, class: current_class_for_controller(:organizations) %></li>
-              <% end -%>
+            <% end -%>
           </ul>
         </nav>
       </div>
@@ -46,13 +47,8 @@
     </div>
 
     <main class="container">
-      <div>
-        <aside>&nbsp;</aside>
-        <section>
-          <%= semantic_flash %>
-          <%= yield %>
-        </section>
-      </div>
+      <%= semantic_flash %>
+      <%= yield %>
     </main>
 
   </body>
