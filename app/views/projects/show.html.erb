@@ -1,11 +1,31 @@
 <% page_title "#{project_context} / #{@project}" %>
 
 <% if @project.tasks.present? %>
-  <ul>
-    <% @project.tasks.each do |task| %>
-      <li><%= link_to task %></li>
-    <% end %>
-  </ul>
+
+<div class="tasks">
+  <table class="ui very basic table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Type</th>
+        <th>Status</th>
+        <th>Summary</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @project.tasks.each do |task| %>
+        <tr>
+          <td align="right"><%= link_to "##{task.sequential_id}", task.path %></td>
+          <td><%= task.type %></td>
+          <td><%= task.status %></td>
+          <td><%= link_to task %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
 <% else %>
   <h4>This project has no tasks. <%= link_to 'Create one now...', new_task_path %></h4>
 <% end -%>
