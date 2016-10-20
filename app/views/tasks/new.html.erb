@@ -1,4 +1,6 @@
-<% page_title 'New Task' %>
+<% page_title "#{project_context} / #{@project}", subtitle: "New task" %>
+
+<h1></h1>
 
 <%= simple_form_for @task, as: :task, url: tasks_path do |f| %>
   <%= f.error_notification %>
@@ -14,5 +16,3 @@
     <%= f.button :submit %>
   </div>
 <% end %>
-
-
