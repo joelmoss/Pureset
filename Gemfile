@@ -16,19 +16,19 @@ gem 'redcarpet'
 gem 'sequenced'
 
 # Asset pipeline gems
-gem 'sprockets', '4.0.0.beta3'
-gem 'sass-rails', git: 'https://github.com/rails/sass-rails.git', ref: 'dfbcc6a'
+gem 'sprockets', '4.0.0.beta4'
+gem 'sassc-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'autoprefixer-rails'
 gem 'babel-transpiler'
 gem 'turbolinks', '~> 5.x'
-gem 'font-awesome-sass'
+gem 'font-awesome-sass', github: 'joelmoss/font-awesome-sass', branch: 'sassc-rails_support'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
 group :development, :test do
-  gem 'rubocop', '~> 0.42.0'
+  gem 'rubocop'
   gem 'rubocop-rspec'
   gem 'byebug'
   gem 'bundler-audit'
