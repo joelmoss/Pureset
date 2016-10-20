@@ -9,6 +9,10 @@ header {
   background-color: white;
   z-index: 1;
 
+  a:hover {
+    text-decoration: none;
+  }
+
   @import 'header/logo';
   @import 'header/navigation';
   @import 'header/avatar';

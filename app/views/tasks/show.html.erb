@@ -1,6 +1,21 @@
-<% page_title "#{project_context} / #{@project}", subtitle: "#{@task.type} ##{@task.to_param}" %>
+<% page_title "#{project_context} / #{@project}", head_only: true %>
 
-<article>
-  <h4>Notes:</h4>
-  <%= GitHub::Markup.render('task.markdown', @task.description).html_safe %>
-</article>
+<div class="page_titles">
+  <h1>
+    <div class="container project_title">
+      <%= link_to project_context %> / <%= link_to @project %>
+    </div>
+  </h1>
+  <h2>
+    <div class="container">
+      <span class="ui big label"><%= @task.type %> #<%= @task.to_param %></span> <small><%= @task %></small>
+    </div>
+  </h2>
+</div>
+
+<main class="container">
+  <article>
+    <h4>Notes:</h4>
+    <%= GitHub::Markup.render('task.markdown', @task.description).html_safe %>
+  </article>
+</main>

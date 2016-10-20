@@ -35,6 +35,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails', '~> 3.5'
+  gem 'mocha'
+  gem 'eslint-rails'
 end
 
 group :development do
@@ -46,6 +48,7 @@ group :development do
   gem 'guard-bundler', require: false
   gem 'guard-rspec', '~> 4.7.0', require: false
   gem 'guard-rubocop', require: false
+  gem 'guard-eslint', require: false, git: 'https://github.com/tadiou/guard-eslint.git'
 
   gem 'rack-mini-profiler'
   gem 'letter_opener'
@@ -55,6 +58,3 @@ group :test do
   gem 'database_cleaner'
   gem 'rails-controller-testing'
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

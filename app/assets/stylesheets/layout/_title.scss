@@ -12,4 +12,19 @@
     width: 100%;
     background-color: white;
   }
+
+  h2 small {
+    font-weight: 400;
+    font-size: 100%;
+  }
+
+  .project_title {
+    a:first-child {
+      font-size: 18px;
+    }
+
+    a:last-child {
+      font-weight: 600;
+    }
+  }
 }

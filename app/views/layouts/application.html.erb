@@ -41,15 +41,20 @@
       </div>
     </header>
 
-    <div class="page_titles">
-      <%= page_title_for_layout %>
-      <%= page_subtitle_for_layout %>
-    </div>
+    <%= semantic_flash %>
 
-    <main class="container">
-      <%= semantic_flash %>
+    <% if @titles_in_head_only %>
       <%= yield %>
-    </main>
+    <% else %>
+      <div class="page_titles">
+        <%= page_title_for_layout %>
+        <%= page_subtitle_for_layout %>
+      </div>
+
+      <main class="container">
+        <%= yield %>
+      </main>
+    <% end %>
 
   </body>
 </html>

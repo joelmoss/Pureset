@@ -108,3 +108,7 @@ guard :rspec, cmd: "bundle exec rspec" do
     Dir[File.join("**/#{m[1]}.feature")][0] || "spec/acceptance"
   end
 end
+
+guard :eslint do
+  watch(%r{^app/assets/javascripts/(.+)\.(js|es6)$})
+end
