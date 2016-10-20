@@ -1,22 +1,27 @@
 <% page_title 'Your Dashboard' %>
 
 <div class="tasks">
-  <table>
-    <tr>
-      <th width="40"></th>
-      <th>Type</th>
-      <th>Status</th>
-      <th>Summary</th>
-      <th>Context</th>
-    </tr>
-    <% @tasks.each do |task| %>
+  <table class="ui very basic table">
+    <thead>
       <tr>
-        <td align="right"><%= link_to "##{task.sequential_id}", task.path %></td>
-        <td><%= task.type %></td>
-        <td><%= task.status %></td>
-        <td><%= link_to task %></td>
-        <td><%= link_to task.contextable %></td>
+        <th></th>
+        <th>Type</th>
+        <th>Status</th>
+        <th>Summary</th>
+        <th>Context</th>
       </tr>
-    <% end %>
+    </thead>
+
+    <tbody>
+      <% @tasks.each do |task| %>
+        <tr>
+          <td align="right"><%= link_to "##{task.sequential_id}", task.path %></td>
+          <td><%= task.type %></td>
+          <td><%= task.status %></td>
+          <td><%= link_to task %></td>
+          <td><%= link_to task.contextable %></td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 </div>
