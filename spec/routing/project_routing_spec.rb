@@ -9,6 +9,14 @@ RSpec.describe 'project routing' do
                                                        id: 'some_project')
   end
 
+  it 'board' do
+    expect(get: '/some_user/some_project/awesome_board').to route_to(controller: 'projects',
+                                                                     action: 'show',
+                                                                     account_id: 'some_user',
+                                                                     project_id: 'some_project',
+                                                                     board_name: 'awesome_board')
+  end
+
   it 'index' do
     expect(get: '/some_user/projects').to route_to(controller: 'projects',
                                                    action: 'index',

@@ -1,11 +1,16 @@
 class ProjectsController < ApplicationController
   include AccountConcerns
+  helper_method :current_board_name
 
   before_action :authenticate_user!
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
     @projects = current_user.projects.all
+  end
+
+  def show
+    @tasks = @project.tasks.for_board(current_board_name)
   end
 
   def new
@@ -37,7 +42,7 @@ class ProjectsController < ApplicationController
   private
 
     def set_project
-      @project = @account.projects.find_by!(slug: params[:id])
+      @project = @account.projects.find_by!(slug: (params[:project_id] || params[:id]))
     end
 
     def project_params
@@ -49,5 +54,9 @@ class ProjectsController < ApplicationController
       end
 
       params.require(:project).permit(:name, :accountable_type, :accountable_id, :type)
+    end
+
+    def current_board_name
+      params[:board_name] || @project.boards.keys.first.to_s
     end
 end
