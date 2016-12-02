@@ -63,3 +63,29 @@ depending on whether the Task is open or closed.
    - Done (default)
    - Duplicate - requires another task ID as a reference
    - Won't do - requires a reason (as a comment?)
+
+
+## Boards
+
+### Backlog
+
+Columns:
+  - Tasks
+  - Bugs
+  - Ready
+
+### Development
+
+Columns:
+  - Ready
+  - Doing
+    - Paused/Waiting
+  - Done
+    - Dev Complete
+    - Dev approved
+  - QA                |
+    - QA Ready        |
+    - QA in progress  | Enabled with the QA module (later)
+    - QA approved     |
+    - QA rejected     |
+  - Shipped (closed)

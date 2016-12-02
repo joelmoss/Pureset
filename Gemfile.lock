@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/joelmoss/font-awesome-sass.git
+  remote: https://github.com/joelmoss/font-awesome-sass.git
   revision: 3a781cfdd19cf55a5d7e5344cb891e4340ca6df5
   branch: sassc-rails_support
   specs:

@@ -217,3 +217,10 @@ an Issue. An Issue cannot be closed until all its Tasks are completed.
 Like an Issue, a Task is either assigned or unassigned. If unassigned, it is assumed to be assigned
 to the Issue assignee, but it can be assigned to any other user. That user must be a Team Member or
 Project Collaborator.
+
+# Questions/Responses
+
+A task may need have a question, and therefore will need a response from one or more people. And
+this is often needed before any further progress can be made, this blocking the task. A task can
+be marked as needing a response, placing it on hold (blocked), and assigning to one or more users
+who need to respond or take action
