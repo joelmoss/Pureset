@@ -14,10 +14,11 @@
 // about supported directives.
 //
 
-//= require jquery
+//= require vue
+//= require jquery3
 //= require jquery_ujs
 //= require turbolinks
-//= require semantic-ui/transitions
+//= require semantic-ui/transition
 //= require semantic-ui/dropdown
 //= require waves
 //= require_tree ./components

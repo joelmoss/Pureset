@@ -23,7 +23,9 @@ gem 'jquery-rails'
 gem 'autoprefixer-rails'
 gem 'babel-transpiler'
 gem 'turbolinks', '~> 5.x'
-gem 'font-awesome-sass', github: 'joelmoss/font-awesome-sass', branch: 'sassc-rails_support'
+gem 'semantic-ui-sass'
+gem 'font-awesome-sass', git: 'https://github.com/joelmoss/font-awesome-sass.git',
+                         branch: 'sassc-rails_support'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
