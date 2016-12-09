@@ -13,23 +13,22 @@
 //= require_self
 //
 
-@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,900,100);
+@import 'variables';
 
-@import 'normalize';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 @import 'include_media';
 
-@import 'semantic-ui/transitions';
-@import 'semantic-ui/forms';
-@import 'semantic-ui/buttons';
-@import 'semantic-ui/message';
-@import 'semantic-ui/label';
-@import 'semantic-ui/dropdown';
-@import 'semantic-ui/table';
-@import 'semantic-ui/step';
-
-@import 'variables';
+// Semantic UI
+@import 'semantic-ui/globals/all';
+@import 'semantic-ui/elements/button';
+@import 'semantic-ui/elements/label';
+@import 'semantic-ui/elements/step';
+@import 'semantic-ui/collections/form';
+@import 'semantic-ui/collections/table';
+@import 'semantic-ui/collections/message';
+@import 'semantic-ui/modules/transition';
+@import 'semantic-ui/modules/dropdown';
 
 @import 'mixins/*';
 @import 'components/*';

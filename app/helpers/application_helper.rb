@@ -1,12 +1,12 @@
 module ApplicationHelper
   def page_title_for_layout
-    content_tag(:h1) do
+    content_tag(:h1) do # rubocop:disable Style/MultilineIfModifier
       content_tag(:div, @page_title, class: 'container')
     end unless @titles_in_head_only
   end
 
   def page_subtitle_for_layout
-    content_tag(:h2) do
+    content_tag(:h2) do # rubocop:disable Style/MultilineIfModifier
       content_tag(:div, @page_subtitle, class: 'container')
     end unless @titles_in_head_only
   end

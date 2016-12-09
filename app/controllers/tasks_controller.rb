@@ -8,14 +8,8 @@ class TasksController < ApplicationController
     @tasks = Task.all
   end
 
-  def show
-  end
-
   def new
     @task = task_context.tasks.build(type: 'Task')
-  end
-
-  def edit
   end
 
   def create
