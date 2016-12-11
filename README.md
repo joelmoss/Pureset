@@ -2,13 +2,13 @@
 
 > A personal, project and organizational task manager
 
-Pureset is built upon the idea that no matter what kind of task management you use, each task is
+Pureset is built upon the idea that no matter what kind of task management you use, every task is
 essentially the same thing; simply a unit of work - be that a project, a bug or a ToDo.
 
 A ticket is a bug, a bug is a task, a task is a ToDo...
 
-So if the above is true, and everything in Pureset is a task, then we can begin to create
-experiences for any type of task.
+So if the above is true, and everything in Pureset is a task, then we can begin to create highly
+customised experiences for any type of task, and work flow.
 
 
 ## Project Types

@@ -1,6 +1,5 @@
 class ProjectsController < ApplicationController
   include AccountConcerns
-  helper_method :current_board_name
 
   before_action :authenticate_user!
   before_action :set_project, only: [:show, :edit, :update, :destroy]
@@ -10,7 +9,6 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @tasks = @project.tasks.for_board(current_board_name)
   end
 
   def new
@@ -54,9 +52,5 @@ class ProjectsController < ApplicationController
       end
 
       params.require(:project).permit(:name, :accountable_type, :accountable_id, :type)
-    end
-
-    def current_board_name
-      params[:board_name] || @project.boards.keys.first.to_s
     end
 end

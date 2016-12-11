@@ -18,8 +18,6 @@
 //= require jquery3
 //= require jquery_ujs
 //= require turbolinks
-//= require semantic-ui/transition
-//= require semantic-ui/dropdown
 //= require waves
 //= require_tree ./components
 //= require_tree .

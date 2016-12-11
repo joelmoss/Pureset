@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :tasks, only: [:new, :create]
     resources :projects, only: :show, path: '' do
       resources :tasks, path: '', only: :show, constraints: { id: /\d*/ }
-      get ':board_name' => 'projects#show', as: :board
+      get ':board_name' => 'projects/boards#show', as: :board
       resources :tasks, only: [:new, :create]
     end
   end

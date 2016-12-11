@@ -1,0 +1,41 @@
+/* browsers require these rules separate */
+::-webkit-input-placeholder {
+  color: rgba(191, 191, 191, 0.87);
+}
+:-ms-input-placeholder {
+  color: rgba(191, 191, 191, 0.87);
+}
+::-moz-placeholder {
+  color: rgba(191, 191, 191, 0.87);
+}
+:focus::-webkit-input-placeholder {
+  color: rgba(115, 115, 115, 0.87);
+}
+:focus:-ms-input-placeholder {
+  color: rgba(115, 115, 115, 0.87);
+}
+:focus::-moz-placeholder {
+  color: rgba(115, 115, 115, 0.87);
+}
+
+/* Error Placeholder */
+.error {
+  ::-webkit-input-placeholder {
+    color: #e7bdbc;
+  }
+  :-ms-input-placeholder {
+    color: #e7bdbc !important;
+  }
+  ::-moz-placeholder {
+    color: #e7bdbc;
+  }
+  :focus::-webkit-input-placeholder {
+    color: #da9796;
+  }
+  :focus:-ms-input-placeholder {
+    color: #da9796 !important;
+  }
+  :focus::-moz-placeholder {
+    color: #da9796;
+  }
+}

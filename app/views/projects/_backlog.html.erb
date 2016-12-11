@@ -1,9 +1,0 @@
-<% if @tasks.present? %>
-
-  <div id="backlog" class="board">
-    <div class="board_column"></div>
-  </div>
-
-<% else %>
-  <h4>This project has no tasks. <%= link_to 'Create one now...', new_task_path %></h4>
-<% end -%>

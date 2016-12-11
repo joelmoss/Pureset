@@ -1,0 +1,18 @@
+.field {
+  input:-webkit-autofill {
+    box-shadow: 0px 0px 0px 100px #FFFFF0 inset !important;
+    border-color: #E5DFA1 !important;
+  }
+
+  /* Focus */
+  input:-webkit-autofill:focus {
+    box-shadow: 0px 0px 0px 100px #FFFFF0 inset !important;
+    border-color: #D5C315 !important;
+  }
+
+  /* Error */
+  &.error input:-webkit-autofill {
+    box-shadow: 0px 0px 0px 100px #FFFAF0 inset !important;
+    border-color: #E0B4B4 !important;
+  }
+}

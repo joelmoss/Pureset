@@ -1,0 +1,27 @@
+<% page_title "#{project_context} / #{@project}", head_only: true %>
+
+<div class="page_titles_for_project">
+  <h1>
+    <div class="container project_title">
+      <%= link_to project_context %> / <%= link_to @project %>
+    </div>
+  </h1>
+
+  <nav>
+    <div class="container">
+      <div class="ui mini steps">
+        <% @project.boards.each do |board_name, board_attrs| %>
+          <%= link_to project_board_path(project_id: @project, board_name: board_name), class: "step #{'active' if board_name.to_s == current_board_name}" do %>
+            <div class="content">
+              <div class="title"><%= board_attrs[:label] %></div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<main class="container">
+  <%= render current_board_name %>
+</main>

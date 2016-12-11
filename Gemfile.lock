@@ -1,5 +1,5 @@
 GIT
-  remote: https://github.com/joelmoss/font-awesome-sass.git
+  remote: git://github.com/joelmoss/font-awesome-sass.git
   revision: 3a781cfdd19cf55a5d7e5344cb891e4340ca6df5
   branch: sassc-rails_support
   specs:
@@ -254,8 +254,6 @@ GEM
       sprockets (> 2.11)
       sprockets-rails
       tilt
-    semantic-ui-sass (2.2.6.0)
-      sass (>= 3.2)
     sequenced (3.1.1)
       activerecord (>= 3.0)
       activesupport (>= 3.0)
@@ -336,7 +334,6 @@ DEPENDENCIES
   rubocop
   rubocop-rspec
   sassc-rails
-  semantic-ui-sass
   sequenced
   simple_form
   spring

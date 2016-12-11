@@ -1,0 +1,17 @@
+.required.field > label:after,
+.required.field > .checkbox:after {
+  margin: -0.2em 0em 0em 0.2em;
+  content: '*';
+  color: #DB2828;
+}
+
+.required.field > label:after {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.required.field > .checkbox:after {
+  position: absolute;
+  top: 0%;
+  left: 100%;
+}

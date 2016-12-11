@@ -17,11 +17,11 @@ class Project < ApplicationRecord
   }.freeze
 
   belongs_to :accountable, polymorphic: true
-  has_many :tasks, as: :contextable do
-    def for_board(board_name)
-      where status: proxy_association.owner.boards[board_name.to_sym][:task_statuses]
-    end
-  end
+  has_many :tasks, -> { extending(Extensions::TasksForBoard).where(type: 'Task') },
+                   as: :contextable
+  has_many :bugs, -> { extending Extensions::TasksForBoard },
+                  as: :contextable,
+                  class_name: 'Task::Bug'
 
   strip_attributes
   acts_as_url :name, url_attribute: :slug,

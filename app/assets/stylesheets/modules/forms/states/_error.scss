@@ -1,0 +1,72 @@
+/* On Form */
+&.error {
+  .error.message:not(:empty) {
+    display: block;
+  }
+
+  .compact.error.message:not(:empty) {
+    display: inline-block;
+  }
+
+  .icon.error.message:not(:empty) {
+    display: flex;
+  }
+}
+
+/* On Field(s) */
+.field.error {
+  label,
+  .input {
+    color: #9F3A38;
+  }
+
+  .corner.label {
+    border-color: #9F3A38;
+    color: #FFFFFF;
+  }
+
+  textarea,
+  select,
+  input:not([type]),
+  input[type="date"],
+  input[type="datetime-local"],
+  input[type="email"],
+  input[type="number"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="time"],
+  input[type="text"],
+  input[type="url"] {
+    background: #FFF6F6;
+    border-color: #E0B4B4;
+    color: #9F3A38;
+    border-radius: '';
+    box-shadow: none;
+  }
+
+  textarea:focus,
+  select:focus,
+  input:not([type]):focus,
+  input[type="date"]:focus,
+  input[type="datetime-local"]:focus,
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="password"]:focus,
+  input[type="search"]:focus,
+  input[type="tel"]:focus,
+  input[type="time"]:focus,
+  input[type="text"]:focus,
+  input[type="url"]:focus {
+    background: #FFF6F6;
+    border-color: #E0B4B4;
+    color: #9F3A38;
+    appearance: none;
+    box-shadow: none;
+  }
+
+  /* Preserve Native Select Stylings */
+  select {
+    appearance: menulist-button;
+  }
+}
