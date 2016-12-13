@@ -1,5 +1,49 @@
-// Vendor overrides
+button,
+input[type="submit"] {
+  background: $color-teal;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  position: relative;
+  height: 34px;
+  margin: 0;
+  min-width: 64px;
+  padding: 0 16px;
+  display: inline-block;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0;
+  overflow: hidden;
+  will-change: box-shadow;
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  line-height: 34px;
+  vertical-align: middle;
 
-.ui.button {
-  font-weight: 400;
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &:hover {
+    background-color: darken($color-teal, 10%);
+  }
+
+  &:focus:not(:active) {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.18), 0 8px 16px rgba(0, 0, 0, 0.36);
+    background-color: lighten($color-teal, 5%);
+  }
+
+  &:active {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    background-color: darken($color-teal, 5%);
+  }
+}
+
+input[type="submit"] {
+  -webkit-appearance: none;
 }

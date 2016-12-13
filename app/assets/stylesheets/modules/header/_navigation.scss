@@ -1,16 +1,22 @@
 nav {
+  display: inline-block;
   margin-top: 11px;
 
-  &:first-child {
-    float: right;
+  &:first-child ul {
+    padding-top: 27px;
   }
 
-  &:last-child ul {
-    padding-top: 22px;
+  &:last-child {
+    position: absolute;
+    right: 0;
 
-    li:first-child a {
-      font-weight: 400;
-      color: #000;
+    ul {
+      padding-top: 10px;
+
+      li:first-child a {
+        font-weight: 400;
+        color: #000;
+      }
     }
   }
 

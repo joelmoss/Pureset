@@ -1,7 +1,6 @@
 header {
   background: transparent image-url('top_bar_bg.png') repeat-x;
   height: 80px;
-  padding-top: 16px;
   border-top: 2px solid $color-teal;
   position: fixed;
   width: 100%;
@@ -11,6 +10,10 @@ header {
 
   a:hover {
     text-decoration: none;
+  }
+
+  .container {
+    position: relative;
   }
 
   @import 'header/logo';
