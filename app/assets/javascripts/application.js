@@ -19,5 +19,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require waves
+//= require select2
 //= require_tree ./components
 //= require_tree .

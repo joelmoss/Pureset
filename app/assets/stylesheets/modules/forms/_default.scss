@@ -76,15 +76,36 @@ input[type="checkbox"] {
   vertical-align: top;
 }
 
-select {
-  display: block;
-  height: auto;
-  width: 100%;
-  background: #FFFFFF;
-  border: 1px solid rgba(34, 36, 38, 0.15);
-  border-radius: 0.28571429rem;
-  box-shadow: 0em 0em 0em 0em transparent inset;
-  padding: 0.62em 1em;
-  color: rgba(0, 0, 0, 0.87);
-  transition: color 0.1s ease, border-color 0.1s ease;
+.select2-container {
+  .select2-selection--single {
+    padding: 3px;
+    height: auto;
+    color: rgba(0, 0, 0, 0.87);
+    border-color: rgba(34, 36, 38, 0.15);
+
+    &[aria-expanded=true] {
+      border-color: #85B7D9;
+    }
+
+    .select2-selection__arrow {
+      height: 34px;
+    }
+  }
+
+  .select2-dropdown {
+    border-color: #85B7D9;
+  }
 }
+
+// select {
+//   display: block;
+//   height: auto;
+//   width: 100%;
+//   background: #FFFFFF;
+//   border: 1px solid rgba(34, 36, 38, 0.15);
+//   border-radius: 0.28571429rem;
+//   box-shadow: 0em 0em 0em 0em transparent inset;
+//   padding: 0.62em 1em;
+//   color: rgba(0, 0, 0, 0.87);
+//   transition: color 0.1s ease, border-color 0.1s ease;
+// }

@@ -46,7 +46,6 @@
   }
 
   textarea:focus,
-  select:focus,
   input:not([type]):focus,
   input[type="date"]:focus,
   input[type="datetime-local"]:focus,
@@ -63,10 +62,5 @@
     color: #9F3A38;
     appearance: none;
     box-shadow: none;
-  }
-
-  /* Preserve Native Select Stylings */
-  select {
-    appearance: menulist-button;
   }
 }
