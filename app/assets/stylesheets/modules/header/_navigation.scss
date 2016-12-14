@@ -1,22 +1,14 @@
 nav {
   display: inline-block;
-  margin-top: 11px;
-
-  &:first-child ul {
-    padding-top: 27px;
-  }
+  margin-top: 36px;
 
   &:last-child {
     position: absolute;
     right: 0;
 
-    ul {
-      padding-top: 10px;
-
-      li:first-child a {
-        font-weight: 400;
-        color: #000;
-      }
+    ul li:first-child a {
+      font-weight: 400;
+      color: #000;
     }
   }
 
@@ -29,6 +21,7 @@ nav {
 
       a {
         color: $color-grey-dark;
+        display: inline-block;
         border-bottom: 1px solid $color-grey-dark;
         font-size: 15px;
         letter-spacing: 0.5px;
