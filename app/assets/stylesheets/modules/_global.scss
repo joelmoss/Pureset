@@ -15,7 +15,11 @@ body {
   line-height: 1.42857143;
   color: $color-grey;
   background-color: white;
-  padding-top: 100px;
+  padding-top: 78px;
+
+  @include media('>=tablet') {
+    padding-top: 115px;
+  }
 }
 
 a {

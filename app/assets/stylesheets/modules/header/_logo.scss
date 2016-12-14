@@ -1,8 +1,19 @@
-.logo {
+#logo {
+  background: transparent image-url('logo.png');
+  width: 87px;
+  height: 47px;
   display: block;
   left: 50%;
-  margin-left: -56px;
-  top: 15px;
+  margin-left: -48px;
+  top: 5px;
   z-index: 2;
   position: absolute;
+  background-size: cover;
+
+  @include media('>=tablet') {
+    top: 15px;
+    width: 113px;
+    height: 63px;
+    margin-left: -56px;
+  }
 }

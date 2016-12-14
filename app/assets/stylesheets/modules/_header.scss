@@ -1,11 +1,19 @@
 header {
   background: transparent image-url('top_bar_bg.png') repeat-x;
-  height: 67px;
+  height: 45px;
   border-top: 2px solid $color-teal;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 3;
+  background-size: 100% 51px;
+  background-position-y: -6px;
+
+  @include media('>=tablet') {
+    height: 66px;
+    background-size: 100% 67px;
+    background-position-y: 0;
+  }
 
   a:hover {
     text-decoration: none;

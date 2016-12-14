@@ -16,18 +16,18 @@
         <nav>
           <ul>
             <% if signed_in? %>
-              <li><%= link_to icon(:plus, ' Create'), new_task_path, class: current_class_for_route(new_task_path) %></li>
+              <li><%= link_to icon(:plus, content_tag(:span, 'Create')), new_task_path, class: current_class_for_route(new_task_path) %></li>
             <% end -%>
           </ul>
         </nav>
 
-        <%= link_to image_tag('logo.png', width: 113, height: 63), :root, class: 'logo' %>
+        <%= link_to '', :root, id: 'logo' %>
 
         <nav>
           <ul>
             <% if signed_in? %>
-              <li><%= link_to icon(:suitcase, ' Projects'), projects_path, class: current_class_for_controller(:projects) %></li>
-              <li><%= link_to icon(:building, ' Orgs'), organizations_path, class: current_class_for_controller(:organizations) %></li>
+              <li><%= link_to icon(:suitcase, content_tag(:span, 'Projects')), projects_path, class: current_class_for_controller(:projects) %></li>
+              <li><%= link_to icon(:building, content_tag(:span, 'Orgs')), organizations_path, class: current_class_for_controller(:organizations) %></li>
 
               <li class="avatar">
                 <%= link_to image_tag("//www.gravatar.com/avatar/#{current_user.gravatar_hash}?s=30", width: 30, height: 30), edit_user_registration_path, class: 'wave' %>

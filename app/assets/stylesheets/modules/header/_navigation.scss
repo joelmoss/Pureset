@@ -1,6 +1,10 @@
 nav {
   display: inline-block;
-  margin-top: 36px;
+  margin-top: 15px;
+
+  @include media('>=tablet') {
+    margin-top: 36px;
+  }
 
   &:last-child {
     position: absolute;
@@ -42,6 +46,14 @@ nav {
           color: $color-grey-blue;
           border-bottom: 3px solid $color-teal;
           font-weight: 800;
+        }
+      }
+
+      span {
+        display: none;
+
+        @include media('>=tablet') {
+          display: inline;
         }
       }
     }
