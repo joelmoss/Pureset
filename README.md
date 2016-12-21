@@ -73,6 +73,8 @@ Columns:
   - Tasks
   - Bugs
   - Ready
+      Hidden until an item from one of the other columns is dragged. On mobile, when an item is
+      swiped right, it will be added to the bottom the Ready column.
 
 ### Development
 
