@@ -9,13 +9,9 @@
 
   <nav>
     <div class="container">
-      <div class="ui mini steps">
+      <div class="board_nav">
         <% @project.boards.each do |board_name, board_attrs| %>
-          <%= link_to project_board_path(project_id: @project, board_name: board_name), class: "step #{'active' if board_name.to_s == current_board_name}" do %>
-            <div class="content">
-              <div class="title"><%= board_attrs[:label] %></div>
-            </div>
-          <% end %>
+          <%= link_to board_attrs[:label], project_board_path(project_id: @project, board_name: board_name), class: board_name.to_s == current_board_name ? 'active' : '' %>
         <% end %>
       </div>
     </div>

@@ -1,0 +1,41 @@
+// Link hover
+a:hover::after,
+a:hover {
+  background: $color-grey-lighter;
+  color: $color-teal;
+}
+
+// Link down
+a:active::after,
+a:active {
+  background: $color-grey-light;
+  color: $color-grey-dark;
+}
+
+// Active
+.active {
+  cursor: auto;
+  color: $color-white;
+  background: $color-teal;
+
+  &:after {
+    display: block;
+    background: $color-teal;
+  }
+
+  &:before {
+    color: rgba(0, 0, 0, 0.85);
+  }
+
+  &:last-child:after {
+    display: none;
+  }
+
+  /* Active Hover */
+  &:hover::after,
+  &:hover {
+    cursor: pointer;
+    background: $color-teal;
+    color: $color-white;
+  }
+}

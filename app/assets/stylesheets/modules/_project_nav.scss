@@ -17,33 +17,5 @@
     a:hover {
       text-decoration: none;
     }
-
-    .steps {
-      margin: 12px 0;
-
-      .step {
-        padding-top: 6px;
-        padding-bottom: 6px;
-      }
-    }
-
-    .ui.steps .link.step:hover::after,
-    .ui.steps .link.step:hover,
-    .ui.steps a.step:hover::after,
-    .ui.steps a.step:hover {
-      background: $color-grey-lighter;
-      color: $color-teal;
-    }
-
-    .ui.steps .step.active,
-    .ui.steps a.step.active:hover,
-    .ui.steps a.step.active:hover:after,
-    .ui.steps .step.active:after {
-      background: $color-teal;
-    }
-
-    .ui.steps .step.active .title {
-      color: $color-white;
-    }
   }
 }

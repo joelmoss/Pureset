@@ -9,6 +9,10 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    if @project.type == 'Project::SoftwareDevelopment'
+      redirect_to project_board_url(project_id: @project,
+                                    board_name: @project.boards.keys.first.to_s)
+    end
   end
 
   def new
