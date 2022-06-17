@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/joelmoss/font-awesome-sass.git
+  remote: https://github.com/joelmoss/font-awesome-sass.git
   revision: 3a781cfdd19cf55a5d7e5344cb891e4340ca6df5
   branch: sassc-rails_support
   specs:
@@ -125,7 +125,8 @@ GEM
     guard-rubocop (1.2.0)
       guard (~> 2.0)
       rubocop (~> 0.20)
-    i18n (0.7.0)
+    i18n (0.9.5)
+      concurrent-ruby (~> 1.0)
     jquery-rails (4.2.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
