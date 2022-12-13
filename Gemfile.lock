@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/joelmoss/font-awesome-sass.git
+  remote: https://github.com/joelmoss/font-awesome-sass.git
   revision: 3a781cfdd19cf55a5d7e5344cb891e4340ca6df5
   branch: sassc-rails_support
   specs:
@@ -74,6 +74,7 @@ GEM
     coderay (1.1.1)
     colorize (0.8.1)
     concurrent-ruby (1.0.2)
+    crass (1.0.6)
     database_cleaner (1.5.3)
     debug_inspector (0.0.2)
     devise (4.2.0)
@@ -138,7 +139,8 @@ GEM
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
       ruby_dep (~> 1.2)
-    loofah (2.0.3)
+    loofah (2.19.1)
+      crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     lumberjack (1.0.10)
     mail (2.6.4)
@@ -194,8 +196,8 @@ GEM
     rails-dom-testing (2.0.1)
       activesupport (>= 4.2.0, < 6.0)
       nokogiri (~> 1.6.0)
-    rails-html-sanitizer (1.0.3)
-      loofah (~> 2.0)
+    rails-html-sanitizer (1.4.4)
+      loofah (~> 2.19, >= 2.19.1)
     railties (5.0.0.1)
       actionpack (= 5.0.0.1)
       activesupport (= 5.0.0.1)
